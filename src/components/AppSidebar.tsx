@@ -1,4 +1,5 @@
 
+
 import { ChevronRight } from 'lucide-react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import {
@@ -70,7 +71,7 @@ const AppSidebar = () => {
                         <SidebarMenuItem key={section.id}>
                           <SidebarMenuButton
                             onClick={() => handleNavigation(section.path)}
-                            className={`w-full justify-start text-sm p-3 rounded h-auto min-h-[50px] ${
+                            className={`w-full justify-start text-sm p-3 rounded h-auto min-h-[60px] ${
                               isActive(section.path)
                                 ? 'bg-blue-600 text-white'
                                 : 'text-gray-400 hover:bg-slate-800 hover:text-gray-300'
@@ -95,3 +96,4 @@ const AppSidebar = () => {
 };
 
 export default AppSidebar;
+
