@@ -9,14 +9,14 @@ const Apresentacao = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-primary via-secondary to-muted">
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-gray-900 to-black">
       {/* Header */}
       <header className="flex items-center justify-between p-4 bg-black/50 backdrop-blur-sm">
         <Button
           variant="ghost"
           size="icon"
           onClick={() => navigate('/')}
-          className="text-white hover:bg-primary/20"
+          className="text-white hover:bg-slate-800"
         >
           <ArrowLeft className="h-6 w-6" />
         </Button>
@@ -29,9 +29,9 @@ const Apresentacao = () => {
       {/* Content */}
       <div className="p-4 sm:p-6 max-w-4xl mx-auto space-y-6 sm:space-y-8">
         {/* Video Section */}
-        <Card className="bg-card border-border">
+        <Card className="bg-slate-800 border-slate-700">
           <CardContent className="p-4 sm:p-6">
-            <div className="aspect-video bg-muted rounded-lg overflow-hidden mb-4">
+            <div className="aspect-video bg-slate-900 rounded-lg overflow-hidden mb-4">
               <iframe
                 src="https://player-serverless.iesde.com.br/prod/player?path=ZGlyZWl0b3NfaHVtYW5vc19lX3JlbGFjb2VzX3NvY2lhaXMvZGlyZWl0b3NfaHVtYW5vc19lX3JlbGFjb2VzX3NvY2lhaXNfMDBfc2VjX2FwcmVzZW50YWNhb18yNjY3NDMubXA0"
                 className="w-full h-full"
@@ -39,16 +39,16 @@ const Apresentacao = () => {
                 title="Apresentação do Curso"
               />
             </div>
-            <h2 className="text-card-foreground text-lg sm:text-xl font-bold mb-2">Apresentação do Curso</h2>
-            <p className="text-muted-foreground text-sm">Videoaula introdutória sobre Direitos Humanos e Relações Sociais</p>
+            <h2 className="text-white text-lg sm:text-xl font-bold mb-2">Apresentação do Curso</h2>
+            <p className="text-gray-400 text-sm">Videoaula introdutória sobre Direitos Humanos e Relações Sociais</p>
           </CardContent>
         </Card>
 
         {/* Text Content */}
-        <Card className="bg-card border-border">
+        <Card className="bg-slate-800 border-slate-700">
           <CardContent className="p-4 sm:p-6">
-            <h3 className="text-card-foreground text-xl sm:text-2xl font-bold mb-4">Apresentação</h3>
-            <div className="text-muted-foreground space-y-4 text-sm sm:text-base leading-relaxed">
+            <h3 className="text-white text-xl sm:text-2xl font-bold mb-4">Apresentação</h3>
+            <div className="text-gray-300 space-y-4 text-sm sm:text-base leading-relaxed">
               <p>
                 Embora a luta pelos direitos humanos esteja presente em grandes marcos da história da civilização, como na Revolução Francesa e na Declaração de Independência dos Estados Unidos, somente em meados do século XX, com a formação da Organização das Nações Unidas (ONU), é que o tema ganhou projeção global. Após mais de 70 anos, o que se observa na prática são parcelas cada vez mais significativas da população mundial tendo seus direitos mais básicos negados. Mesmo que legislações e tratados supranacionais definam os direitos humanos como base da relação entre os povos, o que observamos é uma grande distância entre o que as leis defendem e o que de fato acontece.
               </p>
@@ -76,14 +76,14 @@ const Apresentacao = () => {
           <Button
             variant="outline"
             onClick={() => navigate('/')}
-            className="bg-card border-border text-card-foreground hover:bg-accent hover:text-accent-foreground w-full sm:w-auto"
+            className="bg-slate-800 border-slate-600 text-white hover:bg-slate-700 w-full sm:w-auto"
           >
             <ArrowLeft className="h-4 w-4 mr-2" />
             Voltar ao Início
           </Button>
           <Button
             onClick={() => navigate('/capitulo/1')}
-            className="bg-primary hover:bg-primary/90 text-primary-foreground w-full sm:w-auto"
+            className="bg-blue-600 hover:bg-blue-700 text-white w-full sm:w-auto"
           >
             Próximo: Capítulo 1
             <ArrowRight className="h-4 w-4 ml-2" />

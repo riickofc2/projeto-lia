@@ -17,14 +17,14 @@ const Capitulo1 = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-primary via-secondary to-muted">
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-gray-900 to-black">
       {/* Header */}
       <header className="flex items-center justify-between p-4 bg-black/50 backdrop-blur-sm">
         <Button
           variant="ghost"
           size="icon"
           onClick={() => navigate('/apresentacao')}
-          className="text-white hover:bg-primary/20"
+          className="text-white hover:bg-slate-800"
         >
           <ArrowLeft className="h-6 w-6" />
         </Button>
@@ -35,18 +35,18 @@ const Capitulo1 = () => {
       {/* Content */}
       <div className="p-4 sm:p-6 max-w-4xl mx-auto space-y-6 sm:space-y-8">
         {/* Chapter Title */}
-        <Card className="bg-card border-border">
+        <Card className="bg-slate-800 border-slate-700">
           <CardContent className="p-4 sm:p-6">
-            <h2 className="text-card-foreground text-2xl sm:text-3xl font-bold mb-4 break-words leading-tight">
+            <h2 className="text-white text-2xl sm:text-3xl font-bold mb-4 break-words leading-tight">
               Bases históricas dos direitos humanos
             </h2>
           </CardContent>
         </Card>
 
         {/* Introduction Text */}
-        <Card className="bg-card border-border">
+        <Card className="bg-slate-800 border-slate-700">
           <CardContent className="p-4 sm:p-6">
-            <div className="text-muted-foreground space-y-4 text-sm sm:text-base leading-relaxed">
+            <div className="text-gray-300 space-y-4 text-sm sm:text-base leading-relaxed">
               <p className="break-words">
                 A discussão sobre os direitos humanos apresenta uma dicotomia: ao mesmo tempo em que 
                 todos os seres humanos têm os mesmos direitos com relação aos diversos fatores que 
@@ -80,15 +80,15 @@ const Capitulo1 = () => {
         </Card>
 
         {/* Sections */}
-        <Card className="bg-card border-border">
+        <Card className="bg-slate-800 border-slate-700">
           <CardContent className="p-4 sm:p-6">
-            <h3 className="text-card-foreground text-lg sm:text-xl font-bold mb-4">Seções do Capítulo</h3>
+            <h3 className="text-white text-lg sm:text-xl font-bold mb-4">Seções do Capítulo</h3>
             <div className="space-y-3">
               {sections.map((section) => (
                 <Button
                   key={section.id}
                   variant="outline"
-                  className="w-full justify-start bg-muted border-border text-muted-foreground hover:bg-accent hover:text-accent-foreground p-4 h-auto min-h-[60px]"
+                  className="w-full justify-start bg-slate-700 border-slate-600 text-gray-300 hover:bg-slate-600 hover:text-white p-4 h-auto min-h-[60px]"
                   onClick={() => navigate(section.path)}
                 >
                   <div className="flex items-center justify-between w-full">
@@ -108,14 +108,14 @@ const Capitulo1 = () => {
           <Button
             variant="outline"
             onClick={() => navigate('/apresentacao')}
-            className="bg-card border-border text-card-foreground hover:bg-accent hover:text-accent-foreground w-full sm:w-auto"
+            className="bg-slate-800 border-slate-600 text-white hover:bg-slate-700 w-full sm:w-auto"
           >
             <ArrowLeft className="h-4 w-4 mr-2" />
             Voltar: Apresentação
           </Button>
           <Button
             onClick={() => navigate('/capitulo/1/secao/1')}
-            className="bg-primary hover:bg-primary/90 text-primary-foreground w-full sm:w-auto"
+            className="bg-blue-600 hover:bg-blue-700 text-white w-full sm:w-auto"
           >
             Começar: Seção 1.1
             <ArrowRight className="h-4 w-4 ml-2" />
