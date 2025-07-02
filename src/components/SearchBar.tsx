@@ -54,16 +54,23 @@ const SearchBar = () => {
     setResults([]);
   };
 
+  const handleInputClick = () => {
+    setIsOpen(true);
+  };
+
   return (
     <>
-      <Button
-        variant="ghost"
-        size="icon"
-        onClick={() => setIsOpen(true)}
-        className="text-white hover:bg-slate-800"
-      >
-        <Search className="h-5 w-5" />
-      </Button>
+      <div className="w-full max-w-md mx-auto">
+        <div className="relative">
+          <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400" />
+          <Input
+            placeholder="Buscar conteúdos do livro..."
+            onClick={handleInputClick}
+            readOnly
+            className="pl-10 bg-slate-700 border-slate-600 text-white placeholder:text-gray-400 cursor-pointer hover:bg-slate-600 transition-colors"
+          />
+        </div>
+      </div>
 
       <Dialog open={isOpen} onOpenChange={setIsOpen}>
         <DialogContent className="bg-slate-800 border-slate-700 text-white max-w-2xl">
