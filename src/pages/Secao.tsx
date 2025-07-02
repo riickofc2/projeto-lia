@@ -1,10 +1,12 @@
-
 import { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { ArrowLeft, ArrowRight, Play } from 'lucide-react';
+import { ArrowLeft, ArrowRight, Play, Menu } from 'lucide-react';
+import { SidebarProvider, SidebarTrigger } from '@/components/ui/sidebar';
+import AppSidebar from '@/components/AppSidebar';
 import FABMenu from '@/components/FABMenu';
+import SearchBar from '@/components/SearchBar';
 
 const sectionData = {
   1: {
@@ -290,95 +292,112 @@ const Secao = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-gray-900 to-black">
-      {/* Header */}
-      <header className="flex items-center justify-between p-4 bg-black/50 backdrop-blur-sm">
-        <Button
-          variant="ghost"
-          size="icon"
-          onClick={() => navigate('/capitulo/1')}
-          className="text-white hover:bg-slate-800"
-        >
-          <ArrowLeft className="h-6 w-6" />
-        </Button>
-        <h1 className="text-white text-lg font-semibold">Seção 1.{currentSection}</h1>
-        <div className="w-10"></div>
-      </header>
+    <SidebarProvider>
+      <div className="min-h-screen bg-gradient-to-br from-slate-900 via-gray-900 to-black flex w-full">
+        <AppSidebar />
+        
+        <div className="flex flex-col flex-1">
+          {/* Header */}
+          <header className="flex items-center justify-between p-4 bg-black/50 backdrop-blur-sm border-b border-slate-700">
+            <div className="flex items-center gap-4">
+              <SidebarTrigger className="text-white">
+                <Menu className="h-6 w-6" />
+              </SidebarTrigger>
+              <Button
+                variant="ghost"
+                size="icon"
+                onClick={() => navigate('/capitulo/1')}
+                className="text-white hover:bg-slate-800"
+              >
+                <ArrowLeft className="h-6 w-6" />
+              </Button>
+              <h1 className="text-white text-base sm:text-lg font-semibold">
+                Seção 1.{currentSection}
+              </h1>
+            </div>
+          </header>
 
-      {/* Content */}
-      <div className="p-6 max-w-4xl mx-auto space-y-8">
-        {/* Video Section */}
-        <Card className="bg-slate-800 border-slate-700">
-          <CardContent className="p-6">
-            <div className="aspect-video bg-slate-900 rounded-lg overflow-hidden mb-4">
-              {section.videoUrl ? (
-                <iframe
-                  src={section.videoUrl}
-                  className="w-full h-full"
-                  allowFullScreen
-                  title={section.videoTitle}
-                />
-              ) : (
-                <div className="w-full h-full flex items-center justify-center">
-                  <Button className="bg-blue-600 hover:bg-blue-700 w-16 h-16 rounded-full">
-                    <Play className="h-8 w-8 ml-1" />
-                  </Button>
+          {/* Search Bar */}
+          <div className="p-4 bg-slate-800/50 border-b border-slate-700">
+            <SearchBar />
+          </div>
+
+          {/* Content */}
+          <div className="flex-1 p-4 sm:p-6 max-w-4xl mx-auto space-y-6 sm:space-y-8 w-full">
+            {/* Video Section */}
+            <Card className="bg-slate-800 border-slate-700">
+              <CardContent className="p-4 sm:p-6">
+                <div className="aspect-video bg-slate-900 rounded-lg overflow-hidden mb-4">
+                  {section.videoUrl ? (
+                    <iframe
+                      src={section.videoUrl}
+                      className="w-full h-full"
+                      allowFullScreen
+                      title={section.videoTitle}
+                    />
+                  ) : (
+                    <div className="w-full h-full flex items-center justify-center">
+                      <Button className="bg-blue-600 hover:bg-blue-700 w-16 h-16 rounded-full">
+                        <Play className="h-8 w-8 ml-1" />
+                      </Button>
+                    </div>
+                  )}
                 </div>
+                <h2 className="text-white text-lg sm:text-xl font-bold mb-2">{section.videoTitle}</h2>
+                <p className="text-gray-400 text-sm">Videoaula sobre {section.title.toLowerCase()}</p>
+              </CardContent>
+            </Card>
+
+            {/* Section Title */}
+            <Card className="bg-slate-800 border-slate-700">
+              <CardContent className="p-4 sm:p-6">
+                <h2 className="text-white text-xl sm:text-2xl font-bold mb-4 break-words leading-tight">
+                  1.{currentSection} {section.title}
+                </h2>
+              </CardContent>
+            </Card>
+
+            {/* Text Content */}
+            <Card className="bg-slate-800 border-slate-700">
+              <CardContent className="p-4 sm:p-6">
+                <div className="text-gray-300 space-y-4 text-sm sm:text-base leading-relaxed">
+                  {section.content.split('\n\n').map((paragraph, index) => (
+                    <p key={index} className="break-words">{paragraph.trim()}</p>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Navigation */}
+            <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
+              <Button
+                variant="outline"
+                onClick={goToPrevious}
+                className="bg-slate-800 border-slate-600 text-white hover:bg-slate-700 w-full sm:w-auto"
+              >
+                <ArrowLeft className="h-4 w-4 mr-2" />
+                {currentSection > 1 ? `Anterior: 1.${currentSection - 1}` : 'Voltar ao Capítulo'}
+              </Button>
+              {currentSection < 5 && (
+                <Button
+                  onClick={goToNext}
+                  className="bg-blue-600 hover:bg-blue-700 text-white w-full sm:w-auto"
+                >
+                  Próximo: 1.{currentSection + 1}
+                  <ArrowRight className="h-4 w-4 ml-2" />
+                </Button>
               )}
             </div>
-            <h2 className="text-white text-xl font-bold mb-2">{section.videoTitle}</h2>
-            <p className="text-gray-400 text-sm">Videoaula sobre {section.title.toLowerCase()}</p>
-          </CardContent>
-        </Card>
+          </div>
 
-        {/* Section Title */}
-        <Card className="bg-slate-800 border-slate-700">
-          <CardContent className="p-6">
-            <h2 className="text-white text-2xl font-bold mb-4">
-              1.{currentSection} {section.title}
-            </h2>
-          </CardContent>
-        </Card>
-
-        {/* Text Content */}
-        <Card className="bg-slate-800 border-slate-700">
-          <CardContent className="p-6">
-            <div className="text-gray-300 space-y-4 leading-relaxed">
-              {section.content.split('\n\n').map((paragraph, index) => (
-                <p key={index}>{paragraph.trim()}</p>
-              ))}
-            </div>
-          </CardContent>
-        </Card>
-
-        {/* Navigation */}
-        <div className="flex justify-between items-center">
-          <Button
-            variant="outline"
-            onClick={goToPrevious}
-            className="bg-slate-800 border-slate-600 text-white hover:bg-slate-700"
-          >
-            <ArrowLeft className="h-4 w-4 mr-2" />
-            {currentSection > 1 ? `Anterior: 1.${currentSection - 1}` : 'Voltar ao Capítulo'}
-          </Button>
-          {currentSection < 5 && (
-            <Button
-              onClick={goToNext}
-              className="bg-blue-600 hover:bg-blue-700 text-white"
-            >
-              Próximo: 1.{currentSection + 1}
-              <ArrowRight className="h-4 w-4 ml-2" />
-            </Button>
-          )}
+          {/* FAB Menu */}
+          <FABMenu 
+            context={`secao-1-${currentSection}`} 
+            chapterTitle={`1.${currentSection} ${section.title}`} 
+          />
         </div>
       </div>
-
-      {/* FAB Menu */}
-      <FABMenu 
-        context={`secao-1-${currentSection}`} 
-        chapterTitle={`1.${currentSection} ${section.title}`} 
-      />
-    </div>
+    </SidebarProvider>
   );
 };
 
