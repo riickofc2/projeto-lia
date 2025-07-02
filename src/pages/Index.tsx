@@ -5,6 +5,7 @@ import { Card } from '@/components/ui/card';
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
 import { Menu, ChevronRight } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import SearchBar from '@/components/SearchBar';
 
 const Index = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -33,7 +34,7 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-gray-900 to-black flex flex-col">
-      {/* Header with Menu */}
+      {/* Header with Menu and Search */}
       <header className="flex items-center justify-between p-4 bg-black/50 backdrop-blur-sm">
         <Sheet open={isMenuOpen} onOpenChange={setIsMenuOpen}>
           <SheetTrigger asChild>
@@ -79,12 +80,15 @@ const Index = () => {
             </div>
           </SheetContent>
         </Sheet>
-        <div className="text-white text-sm font-medium">Menu</div>
+        
+        <div className="flex items-center gap-4">
+          <div className="text-white text-sm font-medium">Menu</div>
+          <SearchBar />
+        </div>
       </header>
 
       {/* Main Content */}
       <div className="flex-1 flex flex-col items-center justify-center p-4 sm:p-6 text-center">
-        {/* Book Cover Image */}
         <Card className="w-48 h-64 sm:w-64 sm:h-80 bg-gradient-to-b from-slate-800 to-slate-900 border-slate-700 shadow-2xl mb-6 sm:mb-8 overflow-hidden">
           <div className="w-full h-full relative">
             <img 
@@ -95,10 +99,8 @@ const Index = () => {
           </div>
         </Card>
 
-        {/* Author */}
         <p className="text-gray-300 text-lg sm:text-xl mb-6 sm:mb-8">Fabiano Caxito</p>
 
-        {/* Enter Button */}
         <Button
           onClick={() => navigate('/apresentacao')}
           className="bg-blue-600 hover:bg-blue-700 text-white px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold rounded-lg shadow-lg transition-all duration-300 transform hover:scale-105 w-full max-w-xs"
@@ -107,7 +109,6 @@ const Index = () => {
         </Button>
       </div>
 
-      {/* Footer */}
       <footer className="text-center p-4 text-gray-400 text-sm">
         Livro Digital Interativo
       </footer>

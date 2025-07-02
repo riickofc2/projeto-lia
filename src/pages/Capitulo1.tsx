@@ -1,9 +1,9 @@
-
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import FABMenu from '@/components/FABMenu';
+import SearchBar from '@/components/SearchBar';
 
 const Capitulo1 = () => {
   const navigate = useNavigate();
@@ -29,7 +29,7 @@ const Capitulo1 = () => {
           <ArrowLeft className="h-6 w-6" />
         </Button>
         <h1 className="text-white text-lg font-semibold">Capítulo 1</h1>
-        <div className="w-10"></div>
+        <SearchBar />
       </header>
 
       {/* Content */}

@@ -1,9 +1,9 @@
-
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { ArrowLeft, ArrowRight, Play } from 'lucide-react';
+import { ArrowLeft, ArrowRight } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import FABMenu from '@/components/FABMenu';
+import SearchBar from '@/components/SearchBar';
 
 const Apresentacao = () => {
   const navigate = useNavigate();
@@ -23,7 +23,7 @@ const Apresentacao = () => {
         <h1 className="text-white text-base sm:text-lg font-semibold text-center flex-1 mx-4 truncate">
           Direitos Humanos e Relações Sociais
         </h1>
-        <div className="w-10"></div>
+        <SearchBar />
       </header>
 
       {/* Content */}
