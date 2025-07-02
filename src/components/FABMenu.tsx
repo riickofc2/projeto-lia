@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
@@ -124,18 +123,18 @@ const FABMenu = ({ context = "geral", chapterTitle = "Conteúdo" }: FABMenuProps
       <div className="fixed bottom-6 right-6 z-50">
         <Button
           onClick={() => setIsOpen(!isOpen)}
-          className={`w-14 h-14 rounded-full shadow-lg transition-all duration-300 ${
+          className={`w-20 h-20 rounded-full shadow-lg transition-all duration-300 ${
             isOpen 
-              ? 'bg-red-600 hover:bg-red-700 rotate-45' 
-              : 'bg-slate-800 hover:bg-slate-700'
+              ? 'bg-black hover:bg-gray-800 rotate-45' 
+              : 'bg-black hover:bg-gray-800'
           }`}
         >
-          {isOpen ? <X className="h-6 w-6" /> : <Plus className="h-6 w-6" />}
+          {isOpen ? <X className="h-8 w-8 text-white" /> : <Plus className="h-8 w-8 text-white" />}
         </Button>
 
         {/* Menu Items */}
         {isOpen && (
-          <div className="absolute bottom-16 right-0 space-y-3 animate-fade-in">
+          <div className="absolute bottom-24 right-0 space-y-3 animate-fade-in">
             {menuItems.map((item, index) => (
               <Dialog key={item.id} open={activeDialog === item.id} onOpenChange={(open) => setActiveDialog(open ? item.id : null)}>
                 <DialogTrigger asChild>
