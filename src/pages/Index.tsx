@@ -36,13 +36,17 @@ const Index = () => {
             <Card className="w-48 h-64 sm:w-64 sm:h-80 bg-gradient-to-b from-slate-800 to-slate-900 border-slate-700 shadow-2xl mb-6 sm:mb-8 overflow-hidden">
               <div className="w-full h-full relative">
                 <img 
-                  src="/lovable-uploads/capa.png" 
+                  src="/lovable-uploads/e285b82a-4a7f-46e4-adb7-789dc19e2a93.png" 
                   alt="Capa do livro Direitos Humanos e Relações Sociais"
                   className="w-full h-full object-cover"
                 />
               </div>
             </Card>
 
+            <h2 className="text-white text-xl sm:text-2xl font-bold mb-2 sm:mb-3">
+              Direitos Humanos e Relações Sociais
+            </h2>
+            
             <p className="text-gray-300 text-lg sm:text-xl mb-6 sm:mb-8">Fabiano Caxito</p>
 
             <Button
