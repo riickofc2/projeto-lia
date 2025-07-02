@@ -11,7 +11,7 @@ const Index = () => {
   const navigate = useNavigate();
 
   return (
-    <SidebarProvider collapsible="icon">
+    <SidebarProvider>
       <div className="min-h-screen bg-gradient-to-br from-slate-900 via-gray-900 to-black flex w-full">
         <AppSidebar />
         
@@ -36,7 +36,7 @@ const Index = () => {
             <Card className="w-48 h-64 sm:w-64 sm:h-80 bg-gradient-to-b from-slate-800 to-slate-900 border-slate-700 shadow-2xl mb-6 sm:mb-8 overflow-hidden">
               <div className="w-full h-full relative">
                 <img 
-                  src="/lovable-uploads/deba2f07-5c5f-49d4-afaf-ae8b1add89cf.png" 
+                  src="/lovable-uploads/capa.png" 
                   alt="Capa do livro Direitos Humanos e Relações Sociais"
                   className="w-full h-full object-cover"
                 />
