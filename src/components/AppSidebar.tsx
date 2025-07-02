@@ -52,13 +52,13 @@ const AppSidebar = () => {
                   <SidebarMenuItem>
                     <SidebarMenuButton
                       onClick={() => handleNavigation(chapter.path)}
-                      className={`w-full justify-between p-3 rounded-lg ${
+                      className={`w-full justify-between p-3 rounded-lg h-auto min-h-[60px] ${
                         isActive(chapter.path)
                           ? 'bg-blue-600 text-white'
                           : 'text-gray-300 hover:bg-slate-800 hover:text-white'
                       }`}
                     >
-                      <span className="font-medium text-left break-words leading-tight">
+                      <span className="font-medium text-left break-words leading-tight flex-1 pr-2">
                         {chapter.title}
                       </span>
                       <ChevronRight className="h-4 w-4 flex-shrink-0" />
@@ -70,13 +70,13 @@ const AppSidebar = () => {
                         <SidebarMenuItem key={section.id}>
                           <SidebarMenuButton
                             onClick={() => handleNavigation(section.path)}
-                            className={`w-full justify-start text-sm p-2 rounded ${
+                            className={`w-full justify-start text-sm p-3 rounded h-auto min-h-[50px] ${
                               isActive(section.path)
                                 ? 'bg-blue-600 text-white'
                                 : 'text-gray-400 hover:bg-slate-800 hover:text-gray-300'
                             }`}
                           >
-                            <span className="text-left break-words leading-tight">
+                            <span className="text-left break-words leading-tight flex-1">
                               <span className="font-medium">{section.id}</span> {section.title}
                             </span>
                           </SidebarMenuButton>
