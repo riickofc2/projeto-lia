@@ -88,17 +88,14 @@ const Index = () => {
         <Card className="w-48 h-64 sm:w-64 sm:h-80 bg-gradient-to-b from-slate-800 to-slate-900 border-slate-700 shadow-2xl mb-6 sm:mb-8 overflow-hidden">
           <div className="w-full h-full relative">
             <img 
-              src="https://images.unsplash.com/photo-1589829085413-56de8ae18c73?auto=format&fit=crop&w=800&q=80" 
+              src="/lovable-uploads/deba2f07-5c5f-49d4-afaf-ae8b1add89cf.png" 
               alt="Capa do livro Direitos Humanos e Relações Sociais"
               className="w-full h-full object-cover"
             />
           </div>
         </Card>
 
-        {/* Title */}
-        <h1 className="text-white text-2xl sm:text-3xl md:text-4xl font-bold mb-2 max-w-2xl px-4 break-words leading-tight">
-          Direitos Humanos e Relações Sociais
-        </h1>
+        {/* Author */}
         <p className="text-gray-300 text-lg sm:text-xl mb-6 sm:mb-8">Fabiano Caxito</p>
 
         {/* Enter Button */}

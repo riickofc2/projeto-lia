@@ -40,34 +40,40 @@ const Capitulo1 = () => {
             <h2 className="text-white text-2xl sm:text-3xl font-bold mb-4 break-words leading-tight">
               Bases históricas dos direitos humanos
             </h2>
-            <p className="text-gray-300 text-base sm:text-lg leading-relaxed break-words">
-              Neste capítulo, exploraremos as origens e o desenvolvimento histórico dos direitos humanos, 
-              analisando suas raízes filosóficas, jurídicas e políticas que moldaram a compreensão 
-              contemporânea desses direitos fundamentais.
-            </p>
           </CardContent>
         </Card>
 
         {/* Introduction Text */}
         <Card className="bg-slate-800 border-slate-700">
           <CardContent className="p-4 sm:p-6">
-            <h3 className="text-white text-lg sm:text-xl font-bold mb-4">Introdução</h3>
             <div className="text-gray-300 space-y-4 text-sm sm:text-base leading-relaxed">
               <p className="break-words">
-                Os direitos humanos constituem um conjunto de princípios e normas que reconhecem 
-                a dignidade inerente a todos os seres humanos, independentemente de sua origem, 
-                raça, religião, gênero ou qualquer outra característica distintiva.
+                A discussão sobre os direitos humanos apresenta uma dicotomia: ao mesmo tempo em que 
+                todos os seres humanos têm os mesmos direitos com relação aos diversos fatores que 
+                compõem a vida em sociedade (direito à vida, à saúde, à educação e a oportunidades iguais), 
+                o que se observa na prática é que parcelas cada vez mais significativas da população têm 
+                seus direitos mais básicos negados.
               </p>
               <p className="break-words">
-                Para compreender plenamente a importância e a aplicação dos direitos humanos 
-                na atualidade, é fundamental analisar suas bases históricas, que remontam a 
-                diferentes tradições filosóficas, desenvolvimentos jurídicos e movimentos políticos 
-                ao longo dos séculos.
+                A pobreza, as guerras e as pandemias globais mostram que a sociedade se divide entre um 
+                grupo que tem acesso a seus direitos e outro que se vê marginalizado e não é beneficiado 
+                pelo aumento da riqueza ou pelo desenvolvimento da humanidade. Apesar de as legislações 
+                globais e nacionais definirem nitidamente os direitos humanos, colocá-los em prática 
+                requer mudanças profundas na organização política, econômica, jurídica e social. Ainda 
+                há uma grande distância entre o que as leis pregam e o que acontece no mundo.
               </p>
               <p className="break-words">
-                Este capítulo apresenta uma análise detalhada dessas origens, proporcionando 
-                uma compreensão abrangente dos fundamentos que sustentam os direitos humanos 
-                como os conhecemos hoje.
+                Neste capítulo, vamos abordar o desenvolvimento da discussão sobre os direitos humanos, 
+                desde as primeiras civilizações até o momento atual, traçando um paralelo entre direitos 
+                individuais e filosofia; esta discute a igualdade entre os seres humanos. Ainda, 
+                trataremos da relação entre os direitos humanos e a política, pois as duas áreas guardam 
+                uma profunda relação, visto que é papel do Estado garantir que os direitos das parcelas 
+                mais pobres e marginalizadas da população sejam garantidos.
+              </p>
+              <p className="break-words">
+                Portanto, discutiremos também as origens das legislações que abordam os direitos humanos 
+                e como elas evoluíram ao longo do tempo, mostrando como se organizam as declarações globais 
+                que orientam as legislações nacionais sobre o tema, especialmente no Brasil.
               </p>
             </div>
           </CardContent>
@@ -82,15 +88,15 @@ const Capitulo1 = () => {
                 <Button
                   key={section.id}
                   variant="outline"
-                  className="w-full justify-start h-auto p-3 sm:p-4 bg-slate-900 border-slate-600 text-white hover:bg-slate-700"
+                  className="w-full justify-start h-auto p-3 sm:p-4 bg-slate-900 border-slate-600 text-white hover:bg-slate-700 text-left"
                   onClick={() => navigate(section.path)}
                 >
-                  <div className="text-left flex-1 min-w-0">
-                    <p className="font-semibold text-sm sm:text-base break-words leading-tight">
+                  <div className="flex-1 min-w-0 pr-2">
+                    <p className="font-semibold text-sm sm:text-base break-words leading-tight whitespace-normal">
                       {section.title}
                     </p>
                   </div>
-                  <ArrowRight className="h-4 w-4 ml-2 flex-shrink-0" />
+                  <ArrowRight className="h-4 w-4 flex-shrink-0" />
                 </Button>
               ))}
             </div>
