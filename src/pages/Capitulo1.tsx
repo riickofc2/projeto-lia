@@ -1,4 +1,3 @@
-
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
@@ -88,15 +87,13 @@ const Capitulo1 = () => {
                 <Button
                   key={section.id}
                   variant="outline"
-                  className="w-full justify-start h-auto min-h-[60px] p-3 sm:p-4 bg-slate-900 border-slate-600 text-white hover:bg-slate-700 text-left overflow-hidden"
+                  className="w-full justify-between items-center py-4 px-4 bg-slate-900 border-slate-600 text-white hover:bg-slate-700 h-auto min-h-[3rem]"
                   onClick={() => navigate(section.path)}
                 >
-                  <div className="flex-1 min-w-0 pr-2 overflow-hidden">
-                    <p className="font-semibold text-xs sm:text-sm md:text-base break-words leading-tight whitespace-normal text-left hyphens-auto">
-                      {section.title}
-                    </p>
-                  </div>
-                  <ArrowRight className="h-4 w-4 flex-shrink-0 ml-2" />
+                  <span className="text-left font-semibold text-xs sm:text-sm leading-tight flex-1 pr-3 word-break break-words">
+                    {section.title}
+                  </span>
+                  <ArrowRight className="h-4 w-4 flex-shrink-0" />
                 </Button>
               ))}
             </div>
