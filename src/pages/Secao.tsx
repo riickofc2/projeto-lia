@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
@@ -34,7 +35,7 @@ const sectionData = {
       Para Miranda Filho (2013), estão presentes nas ideias e na luta de King aspectos relacionados à lei eterna e à lei natural. A lei humana, no momento histórico no qual se dá a luta de King, não garante a igualdade, pois é segregacionista. Para o líder, só com o total respeito ao direito de todos os indivíduos, com equidade e justiça, a lei humana se aproximaria da justiça divina e natural.
     `,
     videoTitle: 'Fundamentos Filosóficos dos Direitos Humanos',
-    videoUrl: 'https://player-serverless.iesde.com.br/prod/player?path=ZGlyZWl0b3NfaHVtYW5vc19lX3JlbGFjb2VzX3NvY2lhaXMvZGlyZWl0b3NfaHVtYW5vc19lX3JlbGFjb2VzX3NvY2lhaXNfMDBfc2VjX2FwcmVzZW50YWNhb18yNjY3NDMubXA0'
+    videoUrl: 'https://player-serverless.iesde.com.br/prod/player?path=ZGlyZWl0b3NfaHVtYW5vc19lX3JlbGFjb2VzX3NvY2lhaXMvZGlyZWl0b3NfaHVtYW5vc19lX3JlbGFjb2VzX3NvY2lhaXNfMDFfc2VjXzAxXzI2Njc0NC5tcDQ='
   },
   2: {
     title: 'Origens jurídicas dos direitos humanos',
@@ -51,7 +52,8 @@ const sectionData = {
       e do Cidadão de 1789 representaram marcos importantes na codificação legal dos direitos 
       humanos fundamentais.
     `,
-    videoTitle: 'Desenvolvimento Jurídico dos Direitos Humanos'
+    videoTitle: 'Desenvolvimento Jurídico dos Direitos Humanos',
+    videoUrl: 'https://player-serverless.iesde.com.br/prod/player?path=ZGlyZWl0b3NfaHVtYW5vc19lX3JlbGFjb2VzX3NvY2lhaXMvZGlyZWl0b3NfaHVtYW5vc19lX3JlbGFjb2VzX3NvY2lhaXNfMDFfc2VjXzAyXzI2Njc0NS5tcDQ='
   },
   3: {
     title: 'Origens políticas dos direitos humanos',
@@ -68,7 +70,8 @@ const sectionData = {
       sociais contribuíram para expandir a compreensão e aplicação dos direitos humanos 
       em diferentes contextos políticos.
     `,
-    videoTitle: 'Movimentos Políticos e Direitos Humanos'
+    videoTitle: 'Movimentos Políticos e Direitos Humanos',
+    videoUrl: 'https://player-serverless.iesde.com.br/prod/player?path=ZGlyZWl0b3NfaHVtYW5vc19lX3JlbGFjb2VzX3NvY2lhaXMvZGlyZWl0b3NfaHVtYW5vc19lX3JlbGFjb2VzX3NvY2lhaXNfMDFfc2VjXzAzXzI2Njc0Ni5tcDQ='
   },
   4: {
     title: 'Direitos humanos: contextualização histórica',
@@ -84,7 +87,8 @@ const sectionData = {
       A Guerra Fria, os processos de descolonização e os movimentos pelos direitos civis 
       continuaram a moldar a evolução e aplicação dos direitos humanos no século XX e XXI.
     `,
-    videoTitle: 'Evolução Histórica dos Direitos Humanos'
+    videoTitle: 'Evolução Histórica dos Direitos Humanos',
+    videoUrl: 'https://player-serverless.iesde.com.br/prod/player?path=ZGlyZWl0b3NfaHVtYW5vc19lX3JlbGFjb2VzX3NvY2lhaXMvZGlyZWl0b3NfaHVtYW5vc19lX3JlbGFjb2VzX3NvY2lhaXNfMDFfc2VjXzA0XzI2Njc0Ny5tcDQ='
   },
   5: {
     title: 'Direitos humanos no Brasil',
@@ -103,7 +107,8 @@ const sectionData = {
       Defensoria Pública e o fortalecimento do Ministério Público contribuíram para 
       a proteção desses direitos.
     `,
-    videoTitle: 'Direitos Humanos na História do Brasil'
+    videoTitle: 'Direitos Humanos na História do Brasil',
+    videoUrl: 'https://player-serverless.iesde.com.br/prod/player?path=ZGlyZWl0b3NfaHVtYW5vc19lX3JlbGFjb2VzX3NvY2lhaXMvZGlyZWl0b3NfaHVtYW5vc19lX3JlbGFjb2VzX3NvY2lhaXNfMDFfc2VjXzA1XzI2Njc0OC5tcDQ='
   }
 };
 

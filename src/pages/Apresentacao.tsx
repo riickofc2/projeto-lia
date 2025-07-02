@@ -1,4 +1,5 @@
 
+
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { ArrowLeft, ArrowRight, Play } from 'lucide-react';
@@ -31,10 +32,13 @@ const Apresentacao = () => {
         {/* Video Section */}
         <Card className="bg-slate-800 border-slate-700">
           <CardContent className="p-4 sm:p-6">
-            <div className="aspect-video bg-slate-900 rounded-lg flex items-center justify-center mb-4">
-              <Button className="bg-blue-600 hover:bg-blue-700 w-12 h-12 sm:w-16 sm:h-16 rounded-full">
-                <Play className="h-6 w-6 sm:h-8 sm:w-8 ml-1" />
-              </Button>
+            <div className="aspect-video bg-slate-900 rounded-lg overflow-hidden mb-4">
+              <iframe
+                src="https://player-serverless.iesde.com.br/prod/player?path=ZGlyZWl0b3NfaHVtYW5vc19lX3JlbGFjb2VzX3NvY2lhaXMvZGlyZWl0b3NfaHVtYW5vc19lX3JlbGFjb2VzX3NvY2lhaXNfMDBfc2VjX2FwcmVzZW50YWNhb18yNjY3NDMubXA0"
+                className="w-full h-full"
+                allowFullScreen
+                title="Apresentação do Curso"
+              />
             </div>
             <h2 className="text-white text-lg sm:text-xl font-bold mb-2">Apresentação do Curso</h2>
             <p className="text-gray-400 text-sm">Videoaula introdutória sobre Direitos Humanos e Relações Sociais</p>
@@ -95,3 +99,4 @@ const Apresentacao = () => {
 };
 
 export default Apresentacao;
+
