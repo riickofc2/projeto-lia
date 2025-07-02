@@ -33,7 +33,8 @@ const sectionData = {
 
       Para Miranda Filho (2013), estão presentes nas ideias e na luta de King aspectos relacionados à lei eterna e à lei natural. A lei humana, no momento histórico no qual se dá a luta de King, não garante a igualdade, pois é segregacionista. Para o líder, só com o total respeito ao direito de todos os indivíduos, com equidade e justiça, a lei humana se aproximaria da justiça divina e natural.
     `,
-    videoTitle: 'Fundamentos Filosóficos dos Direitos Humanos'
+    videoTitle: 'Fundamentos Filosóficos dos Direitos Humanos',
+    videoUrl: 'https://player-serverless.iesde.com.br/prod/player?path=ZGlyZWl0b3NfaHVtYW5vc19lX3JlbGFjb2VzX3NvY2lhaXMvZGlyZWl0b3NfaHVtYW5vc19lX3JlbGFjb2VzX3NvY2lhaXNfMDBfc2VjX2FwcmVzZW50YWNhb18yNjY3NDMubXA0'
   },
   2: {
     title: 'Origens jurídicas dos direitos humanos',
@@ -162,10 +163,21 @@ const Secao = () => {
         {/* Video Section */}
         <Card className="bg-slate-800 border-slate-700">
           <CardContent className="p-6">
-            <div className="aspect-video bg-slate-900 rounded-lg flex items-center justify-center mb-4">
-              <Button className="bg-blue-600 hover:bg-blue-700 w-16 h-16 rounded-full">
-                <Play className="h-8 w-8 ml-1" />
-              </Button>
+            <div className="aspect-video bg-slate-900 rounded-lg overflow-hidden mb-4">
+              {section.videoUrl ? (
+                <iframe
+                  src={section.videoUrl}
+                  className="w-full h-full"
+                  allowFullScreen
+                  title={section.videoTitle}
+                />
+              ) : (
+                <div className="w-full h-full flex items-center justify-center">
+                  <Button className="bg-blue-600 hover:bg-blue-700 w-16 h-16 rounded-full">
+                    <Play className="h-8 w-8 ml-1" />
+                  </Button>
+                </div>
+              )}
             </div>
             <h2 className="text-white text-xl font-bold mb-2">{section.videoTitle}</h2>
             <p className="text-gray-400 text-sm">Videoaula sobre {section.title.toLowerCase()}</p>
