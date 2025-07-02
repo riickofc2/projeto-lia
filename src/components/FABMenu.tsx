@@ -19,6 +19,32 @@ const FABMenu = ({ context = "geral", chapterTitle = "Conteúdo" }: FABMenuProps
   // API Key integrada diretamente no código
   const API_KEY = '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';
 
+  // Textos específicos para cada seção
+  const getResumoContent = () => {
+    switch (context) {
+      case 'apresentacao':
+        return 'Introdução do Capítulo 1 – Bases históricas dos direitos humanos\n\nOs direitos humanos, embora garantidos em teoria por leis e tratados, ainda são negados a grandes parcelas da população. A introdução aponta a distância entre o ideal e a prática, e propõe uma análise histórica e filosófica das origens e desafios dessa luta.';
+      
+      case 'secao-1-1':
+        return '1.1 Origens filosóficas dos direitos humanos\n\nA filosofia clássica, com Platão e Aristóteles, lançou as bases do direito natural, conceito retomado por pensadores cristãos como Tomás de Aquino. A ideia de justiça universal e inata sustenta os direitos humanos como valores que precedem e fundamentam as leis humanas.';
+      
+      case 'secao-1-2':
+        return '1.2 Origens jurídicas dos direitos humanos\n\nAs constituições americana (1787) e francesa (1791) formalizaram direitos humanos nas legislações, influenciando o mundo ocidental. A abolição da escravidão e os direitos sociais surgem como desdobramentos históricos da tentativa de tornar esses direitos efetivos.';
+      
+      case 'secao-1-3':
+        return '1.3 Origens políticas dos direitos humanos\n\nA política entra como ferramenta essencial para a garantia dos direitos humanos. Após a Segunda Guerra Mundial, a criação da ONU e a Declaração Universal de 1948 consolidam os direitos humanos como pauta internacional, mesmo com divergências ideológicas e culturais.';
+      
+      case 'secao-1-4':
+        return '1.4 Direitos humanos: contextualização histórica\n\nOs direitos humanos evoluíram em quatro gerações: civis/políticos, sociais, coletivos e intergeracionais. Com o tempo, os documentos internacionais passaram a contemplar a diversidade dos grupos humanos e novas demandas como meio ambiente e proteção de dados.';
+      
+      case 'secao-1-5':
+        return '1.5 Direitos humanos no Brasil\n\nApesar de avanços como a Constituição de 1988 e programas como o PNDH, o Brasil ainda enfrenta sérias desigualdades e dificuldades para garantir os direitos humanos a toda a população, especialmente minorias étnicas, sociais e de gênero.';
+      
+      default:
+        return `Resumo do conteúdo sobre ${chapterTitle.toLowerCase()}. Aqui você encontrará os principais pontos abordados no capítulo, facilitando a revisão e compreensão dos conceitos mais importantes.`;
+    }
+  };
+
   const sendMessage = async () => {
     if (!userInput.trim()) return;
 
@@ -202,10 +228,8 @@ const FABMenu = ({ context = "geral", chapterTitle = "Conteúdo" }: FABMenuProps
                       <div className="space-y-4">
                         <p className="text-gray-300 break-words">Resumo: {chapterTitle}</p>
                         <div className="bg-slate-800 p-4 rounded-lg max-h-64 overflow-y-auto">
-                          <p className="text-white text-sm leading-relaxed break-words">
-                            Este é um resumo do conteúdo sobre {chapterTitle.toLowerCase()}. 
-                            Aqui você encontrará os principais pontos abordados no capítulo, 
-                            facilitando a revisão e compreensão dos conceitos mais importantes.
+                          <p className="text-white text-sm leading-relaxed break-words whitespace-pre-line">
+                            {getResumoContent()}
                           </p>
                         </div>
                       </div>
