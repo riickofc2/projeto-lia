@@ -54,8 +54,8 @@ const Index = () => {
                     onClick={() => handleNavigation(chapter.path)}
                   >
                     <div className="flex items-center justify-between w-full">
-                      <span className="font-medium">{chapter.title}</span>
-                      <ChevronRight className="h-4 w-4" />
+                      <span className="font-medium text-left break-words">{chapter.title}</span>
+                      <ChevronRight className="h-4 w-4 flex-shrink-0 ml-2" />
                     </div>
                   </Button>
                   {chapter.sections && (
@@ -67,7 +67,7 @@ const Index = () => {
                           className="w-full justify-start text-sm text-gray-300 hover:bg-slate-800 h-auto p-2"
                           onClick={() => handleNavigation(section.path)}
                         >
-                          <span>{section.id} {section.title}</span>
+                          <span className="text-left break-words">{section.id} {section.title}</span>
                         </Button>
                       ))}
                     </div>
@@ -81,29 +81,29 @@ const Index = () => {
       </header>
 
       {/* Main Content */}
-      <div className="flex-1 flex flex-col items-center justify-center p-6 text-center">
+      <div className="flex-1 flex flex-col items-center justify-center p-4 sm:p-6 text-center">
         {/* Book Cover */}
-        <Card className="w-64 h-80 bg-gradient-to-b from-slate-800 to-slate-900 border-slate-700 shadow-2xl mb-8 flex items-center justify-center">
-          <div className="text-center p-6">
-            <div className="w-32 h-32 bg-slate-700 rounded-lg mb-4 mx-auto flex items-center justify-center">
-              <span className="text-4xl">📚</span>
+        <Card className="w-48 h-64 sm:w-64 sm:h-80 bg-gradient-to-b from-slate-800 to-slate-900 border-slate-700 shadow-2xl mb-6 sm:mb-8 flex items-center justify-center">
+          <div className="text-center p-4 sm:p-6">
+            <div className="w-24 h-24 sm:w-32 sm:h-32 bg-slate-700 rounded-lg mb-4 mx-auto flex items-center justify-center">
+              <span className="text-2xl sm:text-4xl">📚</span>
             </div>
-            <h2 className="text-white text-lg font-bold leading-tight">
+            <h2 className="text-white text-sm sm:text-lg font-bold leading-tight break-words">
               Direitos Humanos e Relações Sociais
             </h2>
           </div>
         </Card>
 
         {/* Title */}
-        <h1 className="text-white text-3xl md:text-4xl font-bold mb-2 max-w-2xl">
+        <h1 className="text-white text-2xl sm:text-3xl md:text-4xl font-bold mb-2 max-w-2xl px-4 break-words">
           Direitos Humanos e Relações Sociais
         </h1>
-        <p className="text-gray-300 text-xl mb-8">Fabiano Caxito</p>
+        <p className="text-gray-300 text-lg sm:text-xl mb-6 sm:mb-8">Fabiano Caxito</p>
 
         {/* Enter Button */}
         <Button
           onClick={() => navigate('/apresentacao')}
-          className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 text-lg font-semibold rounded-lg shadow-lg transition-all duration-300 transform hover:scale-105"
+          className="bg-blue-600 hover:bg-blue-700 text-white px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold rounded-lg shadow-lg transition-all duration-300 transform hover:scale-105 w-full max-w-xs"
         >
           Entrar
         </Button>

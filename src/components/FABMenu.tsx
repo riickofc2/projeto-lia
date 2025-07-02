@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
-import { Plus, MessageCircle, Headphones, FileText, Network, X } from 'lucide-react';
+import { Plus, MessageCircle, Headphones, FileText, Network, X, Send } from 'lucide-react';
 
 interface FABMenuProps {
   context?: string;
@@ -12,6 +12,56 @@ interface FABMenuProps {
 const FABMenu = ({ context = "geral", chapterTitle = "Conteúdo" }: FABMenuProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeDialog, setActiveDialog] = useState<string | null>(null);
+  const [chatMessages, setChatMessages] = useState<Array<{role: string, content: string}>>([]);
+  const [userInput, setUserInput] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
+  const [apiKey, setApiKey] = useState('');
+
+  const sendMessage = async () => {
+    if (!userInput.trim() || !apiKey.trim()) return;
+
+    const newMessage = { role: 'user', content: userInput };
+    const updatedMessages = [...chatMessages, newMessage];
+    setChatMessages(updatedMessages);
+    setUserInput('');
+    setIsLoading(true);
+
+    try {
+      const response = await fetch('https://api.openai.com/v1/chat/completions', {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${apiKey}`,
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          model: 'gpt-3.5-turbo',
+          messages: [
+            {
+              role: 'system',
+              content: `Você é um mentor digital especializado em Direitos Humanos e Relações Sociais. O usuário está estudando sobre: ${chapterTitle}. Responda de forma educativa e contextualizada ao conteúdo do livro.`
+            },
+            ...updatedMessages
+          ],
+          max_tokens: 500,
+          temperature: 0.7,
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Erro na API');
+      }
+
+      const data = await response.json();
+      const botResponse = { role: 'assistant', content: data.choices[0].message.content };
+      setChatMessages([...updatedMessages, botResponse]);
+    } catch (error) {
+      console.error('Erro ao enviar mensagem:', error);
+      const errorMessage = { role: 'assistant', content: 'Desculpe, ocorreu um erro. Verifique sua chave de API.' };
+      setChatMessages([...updatedMessages, errorMessage]);
+    } finally {
+      setIsLoading(false);
+    }
+  };
 
   const menuItems = [
     {
@@ -71,7 +121,7 @@ const FABMenu = ({ context = "geral", chapterTitle = "Conteúdo" }: FABMenuProps
                     <item.icon className="h-5 w-5" />
                   </Button>
                 </DialogTrigger>
-                <DialogContent className="sm:max-w-md bg-slate-900 border-slate-700">
+                <DialogContent className="sm:max-w-md bg-slate-900 border-slate-700 max-h-[80vh] overflow-y-auto">
                   <DialogHeader>
                     <DialogTitle className="text-white flex items-center gap-2">
                       <item.icon className="h-5 w-5" />
@@ -84,20 +134,65 @@ const FABMenu = ({ context = "geral", chapterTitle = "Conteúdo" }: FABMenuProps
                         <p className="text-gray-300">
                           Converse com o mentor digital sobre: <strong>{chapterTitle}</strong>
                         </p>
-                        <div className="bg-slate-800 p-3 rounded-lg">
-                          <p className="text-sm text-gray-400 mb-2">Mentor Digital:</p>
-                          <p className="text-white">
-                            Olá! Sou seu mentor digital. Posso ajudar com dúvidas sobre {chapterTitle.toLowerCase()}. 
-                            O que gostaria de saber?
-                          </p>
+                        
+                        {!apiKey && (
+                          <div className="space-y-2">
+                            <label className="text-sm text-gray-400">Chave da API OpenAI:</label>
+                            <input 
+                              type="password" 
+                              placeholder="Cole sua chave da API aqui..." 
+                              value={apiKey}
+                              onChange={(e) => setApiKey(e.target.value)}
+                              className="w-full bg-slate-800 text-white p-2 rounded border-slate-600 text-sm"
+                            />
+                            <p className="text-xs text-gray-500">
+                              Sua chave é armazenada apenas localmente e não é enviada para nossos servidores.
+                            </p>
+                          </div>
+                        )}
+
+                        <div className="bg-slate-800 p-3 rounded-lg max-h-64 overflow-y-auto space-y-2">
+                          {chatMessages.length === 0 ? (
+                            <div>
+                              <p className="text-sm text-gray-400 mb-2">Mentor Digital:</p>
+                              <p className="text-white text-sm">
+                                Olá! Sou seu mentor digital. Posso ajudar com dúvidas sobre {chapterTitle.toLowerCase()}. 
+                                O que gostaria de saber?
+                              </p>
+                            </div>
+                          ) : (
+                            chatMessages.map((message, index) => (
+                              <div key={index} className={`p-2 rounded ${message.role === 'user' ? 'bg-blue-600 ml-4' : 'bg-slate-700 mr-4'}`}>
+                                <p className={`text-sm ${message.role === 'user' ? 'text-white' : 'text-gray-200'}`}>
+                                  <strong>{message.role === 'user' ? 'Você' : 'Mentor'}:</strong> {message.content}
+                                </p>
+                              </div>
+                            ))
+                          )}
+                          {isLoading && (
+                            <div className="bg-slate-700 mr-4 p-2 rounded">
+                              <p className="text-sm text-gray-200">Mentor está digitando...</p>
+                            </div>
+                          )}
                         </div>
+                        
                         <div className="flex gap-2">
                           <input 
                             type="text" 
                             placeholder="Digite sua pergunta..." 
-                            className="flex-1 bg-slate-800 text-white p-2 rounded border-slate-600"
+                            value={userInput}
+                            onChange={(e) => setUserInput(e.target.value)}
+                            onKeyPress={(e) => e.key === 'Enter' && sendMessage()}
+                            className="flex-1 bg-slate-800 text-white p-2 rounded border-slate-600 text-sm"
+                            disabled={!apiKey.trim()}
                           />
-                          <Button className="bg-blue-600 hover:bg-blue-700">Enviar</Button>
+                          <Button 
+                            onClick={sendMessage} 
+                            className="bg-blue-600 hover:bg-blue-700 px-3"
+                            disabled={!apiKey.trim() || isLoading}
+                          >
+                            <Send className="h-4 w-4" />
+                          </Button>
                         </div>
                       </div>
                     )}
