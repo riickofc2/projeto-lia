@@ -11,7 +11,7 @@ const Apresentacao = () => {
   const navigate = useNavigate();
 
   return (
-    <SidebarProvider>
+    <SidebarProvider defaultOpen={false}>
       <div className="min-h-screen bg-gradient-to-br from-slate-900 via-gray-900 to-black flex w-full">
         <AppSidebar />
         
