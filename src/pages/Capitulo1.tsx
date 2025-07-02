@@ -33,14 +33,14 @@ const Capitulo1 = () => {
       </header>
 
       {/* Content */}
-      <div className="p-6 max-w-4xl mx-auto space-y-8">
+      <div className="p-4 sm:p-6 max-w-4xl mx-auto space-y-6 sm:space-y-8">
         {/* Chapter Title */}
         <Card className="bg-slate-800 border-slate-700">
-          <CardContent className="p-6">
-            <h2 className="text-white text-3xl font-bold mb-4">
+          <CardContent className="p-4 sm:p-6">
+            <h2 className="text-white text-2xl sm:text-3xl font-bold mb-4 break-words leading-tight">
               Bases históricas dos direitos humanos
             </h2>
-            <p className="text-gray-300 text-lg leading-relaxed">
+            <p className="text-gray-300 text-base sm:text-lg leading-relaxed break-words">
               Neste capítulo, exploraremos as origens e o desenvolvimento histórico dos direitos humanos, 
               analisando suas raízes filosóficas, jurídicas e políticas que moldaram a compreensão 
               contemporânea desses direitos fundamentais.
@@ -50,21 +50,21 @@ const Capitulo1 = () => {
 
         {/* Introduction Text */}
         <Card className="bg-slate-800 border-slate-700">
-          <CardContent className="p-6">
-            <h3 className="text-white text-xl font-bold mb-4">Introdução</h3>
-            <div className="text-gray-300 space-y-4 leading-relaxed">
-              <p>
+          <CardContent className="p-4 sm:p-6">
+            <h3 className="text-white text-lg sm:text-xl font-bold mb-4">Introdução</h3>
+            <div className="text-gray-300 space-y-4 text-sm sm:text-base leading-relaxed">
+              <p className="break-words">
                 Os direitos humanos constituem um conjunto de princípios e normas que reconhecem 
                 a dignidade inerente a todos os seres humanos, independentemente de sua origem, 
                 raça, religião, gênero ou qualquer outra característica distintiva.
               </p>
-              <p>
+              <p className="break-words">
                 Para compreender plenamente a importância e a aplicação dos direitos humanos 
                 na atualidade, é fundamental analisar suas bases históricas, que remontam a 
                 diferentes tradições filosóficas, desenvolvimentos jurídicos e movimentos políticos 
                 ao longo dos séculos.
               </p>
-              <p>
+              <p className="break-words">
                 Este capítulo apresenta uma análise detalhada dessas origens, proporcionando 
                 uma compreensão abrangente dos fundamentos que sustentam os direitos humanos 
                 como os conhecemos hoje.
@@ -75,20 +75,22 @@ const Capitulo1 = () => {
 
         {/* Sections */}
         <Card className="bg-slate-800 border-slate-700">
-          <CardContent className="p-6">
-            <h3 className="text-white text-xl font-bold mb-4">Seções do Capítulo</h3>
+          <CardContent className="p-4 sm:p-6">
+            <h3 className="text-white text-lg sm:text-xl font-bold mb-4">Seções do Capítulo</h3>
             <div className="space-y-3">
               {sections.map((section) => (
                 <Button
                   key={section.id}
                   variant="outline"
-                  className="w-full justify-start h-auto p-4 bg-slate-900 border-slate-600 text-white hover:bg-slate-700"
+                  className="w-full justify-start h-auto p-3 sm:p-4 bg-slate-900 border-slate-600 text-white hover:bg-slate-700"
                   onClick={() => navigate(section.path)}
                 >
-                  <div className="text-left">
-                    <p className="font-semibold">{section.title}</p>
+                  <div className="text-left flex-1 min-w-0">
+                    <p className="font-semibold text-sm sm:text-base break-words leading-tight">
+                      {section.title}
+                    </p>
                   </div>
-                  <ArrowRight className="h-4 w-4 ml-auto" />
+                  <ArrowRight className="h-4 w-4 ml-2 flex-shrink-0" />
                 </Button>
               ))}
             </div>
@@ -96,18 +98,18 @@ const Capitulo1 = () => {
         </Card>
 
         {/* Navigation */}
-        <div className="flex justify-between items-center">
+        <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
           <Button
             variant="outline"
             onClick={() => navigate('/apresentacao')}
-            className="bg-slate-800 border-slate-600 text-white hover:bg-slate-700"
+            className="bg-slate-800 border-slate-600 text-white hover:bg-slate-700 w-full sm:w-auto"
           >
             <ArrowLeft className="h-4 w-4 mr-2" />
             Voltar: Apresentação
           </Button>
           <Button
             onClick={() => navigate('/capitulo/1/secao/1')}
-            className="bg-blue-600 hover:bg-blue-700 text-white"
+            className="bg-blue-600 hover:bg-blue-700 text-white w-full sm:w-auto"
           >
             Começar: Seção 1.1
             <ArrowRight className="h-4 w-4 ml-2" />

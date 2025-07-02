@@ -15,10 +15,12 @@ const FABMenu = ({ context = "geral", chapterTitle = "Conteúdo" }: FABMenuProps
   const [chatMessages, setChatMessages] = useState<Array<{role: string, content: string}>>([]);
   const [userInput, setUserInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
-  const [apiKey, setApiKey] = useState('');
+
+  // API Key integrada diretamente no código
+  const API_KEY = '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';
 
   const sendMessage = async () => {
-    if (!userInput.trim() || !apiKey.trim()) return;
+    if (!userInput.trim()) return;
 
     const newMessage = { role: 'user', content: userInput };
     const updatedMessages = [...chatMessages, newMessage];
@@ -30,7 +32,7 @@ const FABMenu = ({ context = "geral", chapterTitle = "Conteúdo" }: FABMenuProps
       const response = await fetch('https://api.openai.com/v1/chat/completions', {
         method: 'POST',
         headers: {
-          'Authorization': `Bearer ${apiKey}`,
+          'Authorization': `Bearer ${API_KEY}`,
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
@@ -38,7 +40,7 @@ const FABMenu = ({ context = "geral", chapterTitle = "Conteúdo" }: FABMenuProps
           messages: [
             {
               role: 'system',
-              content: `Você é um mentor digital especializado em Direitos Humanos e Relações Sociais. O usuário está estudando sobre: ${chapterTitle}. Responda de forma educativa e contextualizada ao conteúdo do livro.`
+              content: `Você é um mentor digital especializado em Direitos Humanos e Relações Sociais. O usuário está estudando sobre: ${chapterTitle}. Responda de forma educativa e contextualizada ao conteúdo do livro "Direitos Humanos e Relações Sociais" de Fabiano Caxito. Seja didático, claro e sempre relacione suas respostas ao contexto dos direitos humanos no Brasil e no mundo.`
             },
             ...updatedMessages
           ],
@@ -56,7 +58,7 @@ const FABMenu = ({ context = "geral", chapterTitle = "Conteúdo" }: FABMenuProps
       setChatMessages([...updatedMessages, botResponse]);
     } catch (error) {
       console.error('Erro ao enviar mensagem:', error);
-      const errorMessage = { role: 'assistant', content: 'Desculpe, ocorreu um erro. Verifique sua chave de API.' };
+      const errorMessage = { role: 'assistant', content: 'Desculpe, ocorreu um erro na comunicação. Tente novamente em alguns instantes.' };
       setChatMessages([...updatedMessages, errorMessage]);
     } finally {
       setIsLoading(false);
@@ -131,39 +133,23 @@ const FABMenu = ({ context = "geral", chapterTitle = "Conteúdo" }: FABMenuProps
                   <div className="p-4">
                     {item.id === 'mentor' && (
                       <div className="space-y-4">
-                        <p className="text-gray-300">
+                        <p className="text-gray-300 text-sm break-words">
                           Converse com o mentor digital sobre: <strong>{chapterTitle}</strong>
                         </p>
-                        
-                        {!apiKey && (
-                          <div className="space-y-2">
-                            <label className="text-sm text-gray-400">Chave da API OpenAI:</label>
-                            <input 
-                              type="password" 
-                              placeholder="Cole sua chave da API aqui..." 
-                              value={apiKey}
-                              onChange={(e) => setApiKey(e.target.value)}
-                              className="w-full bg-slate-800 text-white p-2 rounded border-slate-600 text-sm"
-                            />
-                            <p className="text-xs text-gray-500">
-                              Sua chave é armazenada apenas localmente e não é enviada para nossos servidores.
-                            </p>
-                          </div>
-                        )}
 
                         <div className="bg-slate-800 p-3 rounded-lg max-h-64 overflow-y-auto space-y-2">
                           {chatMessages.length === 0 ? (
                             <div>
                               <p className="text-sm text-gray-400 mb-2">Mentor Digital:</p>
-                              <p className="text-white text-sm">
-                                Olá! Sou seu mentor digital. Posso ajudar com dúvidas sobre {chapterTitle.toLowerCase()}. 
+                              <p className="text-white text-sm break-words leading-relaxed">
+                                Olá! Sou seu mentor digital especializado em Direitos Humanos. Posso ajudar com dúvidas sobre {chapterTitle.toLowerCase()}. 
                                 O que gostaria de saber?
                               </p>
                             </div>
                           ) : (
                             chatMessages.map((message, index) => (
                               <div key={index} className={`p-2 rounded ${message.role === 'user' ? 'bg-blue-600 ml-4' : 'bg-slate-700 mr-4'}`}>
-                                <p className={`text-sm ${message.role === 'user' ? 'text-white' : 'text-gray-200'}`}>
+                                <p className={`text-sm break-words leading-relaxed ${message.role === 'user' ? 'text-white' : 'text-gray-200'}`}>
                                   <strong>{message.role === 'user' ? 'Você' : 'Mentor'}:</strong> {message.content}
                                 </p>
                               </div>
@@ -184,12 +170,11 @@ const FABMenu = ({ context = "geral", chapterTitle = "Conteúdo" }: FABMenuProps
                             onChange={(e) => setUserInput(e.target.value)}
                             onKeyPress={(e) => e.key === 'Enter' && sendMessage()}
                             className="flex-1 bg-slate-800 text-white p-2 rounded border-slate-600 text-sm"
-                            disabled={!apiKey.trim()}
                           />
                           <Button 
                             onClick={sendMessage} 
                             className="bg-blue-600 hover:bg-blue-700 px-3"
-                            disabled={!apiKey.trim() || isLoading}
+                            disabled={isLoading}
                           >
                             <Send className="h-4 w-4" />
                           </Button>
@@ -198,7 +183,7 @@ const FABMenu = ({ context = "geral", chapterTitle = "Conteúdo" }: FABMenuProps
                     )}
                     {item.id === 'podcast' && (
                       <div className="space-y-4">
-                        <p className="text-gray-300">Áudio do capítulo: {chapterTitle}</p>
+                        <p className="text-gray-300 break-words">Áudio do capítulo: {chapterTitle}</p>
                         <div className="bg-slate-800 p-4 rounded-lg">
                           <div className="flex items-center gap-4">
                             <Button className="bg-green-600 hover:bg-green-700">
@@ -215,9 +200,9 @@ const FABMenu = ({ context = "geral", chapterTitle = "Conteúdo" }: FABMenuProps
                     )}
                     {item.id === 'resumo' && (
                       <div className="space-y-4">
-                        <p className="text-gray-300">Resumo: {chapterTitle}</p>
+                        <p className="text-gray-300 break-words">Resumo: {chapterTitle}</p>
                         <div className="bg-slate-800 p-4 rounded-lg max-h-64 overflow-y-auto">
-                          <p className="text-white text-sm leading-relaxed">
+                          <p className="text-white text-sm leading-relaxed break-words">
                             Este é um resumo do conteúdo sobre {chapterTitle.toLowerCase()}. 
                             Aqui você encontrará os principais pontos abordados no capítulo, 
                             facilitando a revisão e compreensão dos conceitos mais importantes.
@@ -227,7 +212,7 @@ const FABMenu = ({ context = "geral", chapterTitle = "Conteúdo" }: FABMenuProps
                     )}
                     {item.id === 'mapa' && (
                       <div className="space-y-4">
-                        <p className="text-gray-300">Mapa Mental: {chapterTitle}</p>
+                        <p className="text-gray-300 break-words">Mapa Mental: {chapterTitle}</p>
                         <div className="bg-slate-700 p-8 rounded-lg flex items-center justify-center">
                           <div className="text-center">
                             <Network className="h-16 w-16 text-orange-500 mx-auto mb-2" />

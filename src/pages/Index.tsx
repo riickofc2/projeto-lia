@@ -54,7 +54,7 @@ const Index = () => {
                     onClick={() => handleNavigation(chapter.path)}
                   >
                     <div className="flex items-center justify-between w-full">
-                      <span className="font-medium text-left break-words">{chapter.title}</span>
+                      <span className="font-medium text-left break-words leading-tight">{chapter.title}</span>
                       <ChevronRight className="h-4 w-4 flex-shrink-0 ml-2" />
                     </div>
                   </Button>
@@ -67,7 +67,9 @@ const Index = () => {
                           className="w-full justify-start text-sm text-gray-300 hover:bg-slate-800 h-auto p-2"
                           onClick={() => handleNavigation(section.path)}
                         >
-                          <span className="text-left break-words">{section.id} {section.title}</span>
+                          <span className="text-left break-words leading-tight">
+                            <span className="font-medium">{section.id}</span> {section.title}
+                          </span>
                         </Button>
                       ))}
                     </div>
@@ -82,20 +84,19 @@ const Index = () => {
 
       {/* Main Content */}
       <div className="flex-1 flex flex-col items-center justify-center p-4 sm:p-6 text-center">
-        {/* Book Cover */}
-        <Card className="w-48 h-64 sm:w-64 sm:h-80 bg-gradient-to-b from-slate-800 to-slate-900 border-slate-700 shadow-2xl mb-6 sm:mb-8 flex items-center justify-center">
-          <div className="text-center p-4 sm:p-6">
-            <div className="w-24 h-24 sm:w-32 sm:h-32 bg-slate-700 rounded-lg mb-4 mx-auto flex items-center justify-center">
-              <span className="text-2xl sm:text-4xl">📚</span>
-            </div>
-            <h2 className="text-white text-sm sm:text-lg font-bold leading-tight break-words">
-              Direitos Humanos e Relações Sociais
-            </h2>
+        {/* Book Cover Image */}
+        <Card className="w-48 h-64 sm:w-64 sm:h-80 bg-gradient-to-b from-slate-800 to-slate-900 border-slate-700 shadow-2xl mb-6 sm:mb-8 overflow-hidden">
+          <div className="w-full h-full relative">
+            <img 
+              src="https://images.unsplash.com/photo-1589829085413-56de8ae18c73?auto=format&fit=crop&w=800&q=80" 
+              alt="Capa do livro Direitos Humanos e Relações Sociais"
+              className="w-full h-full object-cover"
+            />
           </div>
         </Card>
 
         {/* Title */}
-        <h1 className="text-white text-2xl sm:text-3xl md:text-4xl font-bold mb-2 max-w-2xl px-4 break-words">
+        <h1 className="text-white text-2xl sm:text-3xl md:text-4xl font-bold mb-2 max-w-2xl px-4 break-words leading-tight">
           Direitos Humanos e Relações Sociais
         </h1>
         <p className="text-gray-300 text-lg sm:text-xl mb-6 sm:mb-8">Fabiano Caxito</p>
