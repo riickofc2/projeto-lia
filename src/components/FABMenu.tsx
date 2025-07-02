@@ -1,3 +1,4 @@
+
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
@@ -18,10 +19,35 @@ const FABMenu = ({ context = "geral", chapterTitle = "Conteúdo" }: FABMenuProps
   // API Key integrada diretamente no código
   const API_KEY = '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';
 
+  // Função para obter a imagem do mapa mental baseada no contexto
+  const getMapaImage = () => {
+    switch (context) {
+      case 'apresentacao':
+        return '/lovable-uploads/f4dde4b7-6d75-4f80-a65e-cb16dd801bc0.png';
+      case 'capitulo1':
+        return '/lovable-uploads/3080c897-7042-421a-8b89-4c9a37293c16.png';
+      case 'secao-1-1':
+        return '/lovable-uploads/8c853cbc-fb74-49d2-bb0a-35bba21d176f.png';
+      case 'secao-1-2':
+        return '/lovable-uploads/ea25ad3b-d72c-4a70-9d8b-4da7fae80254.png';
+      case 'secao-1-3':
+        return '/lovable-uploads/e0c08e18-49e3-4d12-82e0-97be3fd6b24f.png';
+      case 'secao-1-4':
+        return '/lovable-uploads/7d561d87-5ee3-4e72-a332-6d64c5b5ac73.png';
+      case 'secao-1-5':
+        return '/lovable-uploads/ddbd70c2-36ec-46f5-bb7f-a362d99f2eb5.png';
+      default:
+        return '/lovable-uploads/f4dde4b7-6d75-4f80-a65e-cb16dd801bc0.png';
+    }
+  };
+
   // Textos específicos para cada seção
   const getResumoContent = () => {
     switch (context) {
       case 'apresentacao':
+        return 'Introdução do Capítulo 1 – Bases históricas dos direitos humanos\n\nOs direitos humanos, embora garantidos em teoria por leis e tratados, ainda são negados a grandes parcelas da população. A introdução aponta a distância entre o ideal e a prática, e propõe uma análise histórica e filosófica das origens e desafios dessa luta.';
+      
+      case 'capitulo1':
         return 'Introdução do Capítulo 1 – Bases históricas dos direitos humanos\n\nOs direitos humanos, embora garantidos em teoria por leis e tratados, ainda são negados a grandes parcelas da população. A introdução aponta a distância entre o ideal e a prática, e propõe uma análise histórica e filosófica das origens e desafios dessa luta.';
       
       case 'secao-1-1':
@@ -236,11 +262,12 @@ const FABMenu = ({ context = "geral", chapterTitle = "Conteúdo" }: FABMenuProps
                     {item.id === 'mapa' && (
                       <div className="space-y-4">
                         <p className="text-gray-300 break-words">Mapa Mental: {chapterTitle}</p>
-                        <div className="bg-slate-700 p-8 rounded-lg flex items-center justify-center">
-                          <div className="text-center">
-                            <Network className="h-16 w-16 text-orange-500 mx-auto mb-2" />
-                            <p className="text-gray-400">Mapa mental carregado</p>
-                          </div>
+                        <div className="bg-slate-800 p-4 rounded-lg">
+                          <img 
+                            src={getMapaImage()} 
+                            alt={`Mapa Mental - ${chapterTitle}`}
+                            className="w-full h-auto rounded-lg"
+                          />
                         </div>
                       </div>
                     )}
