@@ -88,15 +88,15 @@ const Capitulo1 = () => {
                 <Button
                   key={section.id}
                   variant="outline"
-                  className="w-full justify-start h-auto p-3 sm:p-4 bg-slate-900 border-slate-600 text-white hover:bg-slate-700 text-left"
+                  className="w-full justify-start h-auto min-h-[60px] p-3 sm:p-4 bg-slate-900 border-slate-600 text-white hover:bg-slate-700 text-left overflow-hidden"
                   onClick={() => navigate(section.path)}
                 >
-                  <div className="flex-1 min-w-0 pr-2">
-                    <p className="font-semibold text-sm sm:text-base break-words leading-tight whitespace-normal">
+                  <div className="flex-1 min-w-0 pr-2 overflow-hidden">
+                    <p className="font-semibold text-xs sm:text-sm md:text-base break-words leading-tight whitespace-normal text-left hyphens-auto">
                       {section.title}
                     </p>
                   </div>
-                  <ArrowRight className="h-4 w-4 flex-shrink-0" />
+                  <ArrowRight className="h-4 w-4 flex-shrink-0 ml-2" />
                 </Button>
               ))}
             </div>
