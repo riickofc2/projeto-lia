@@ -1,5 +1,4 @@
 
-
 import { ChevronRight } from 'lucide-react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import {
@@ -77,7 +76,7 @@ const AppSidebar = () => {
                                 : 'text-gray-400 hover:bg-slate-800 hover:text-gray-300'
                             }`}
                           >
-                            <span className="text-left break-words leading-tight flex-1 whitespace-normal">
+                            <span className="text-left break-words leading-tight flex-1 whitespace-normal block">
                               <span className="font-medium">{section.id}</span> {section.title}
                             </span>
                           </SidebarMenuButton>
@@ -96,4 +95,3 @@ const AppSidebar = () => {
 };
 
 export default AppSidebar;
-
