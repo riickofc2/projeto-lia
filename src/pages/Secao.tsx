@@ -40,17 +40,38 @@ const sectionData = {
   2: {
     title: 'Origens jurídicas dos direitos humanos',
     content: `
-      As origens jurídicas dos direitos humanos podem ser rastreadas através de documentos 
-      históricos fundamentais que estabeleceram precedentes para a proteção legal dos 
-      direitos individuais.
+      Com base nas discussões desenvolvidas pelos filósofos contratualistas, os direitos humanos passaram a ser incluídos nas legislações e nas constituições dos países democráticos com base em dois importantes documentos: a Constituição dos Estados Unidos da América, promulgada em 1787, e a Constituição Francesa, de 1791.
 
-      A Magna Carta de 1215, embora limitada em escopo, estabeleceu o princípio de que 
-      mesmo o poder real estava sujeito a limitações legais. A Petição de Direitos de 1628 
-      e o Bill of Rights inglês de 1689 expandiram essas proteções.
+      Após a Revolução Francesa, em 1789, foi instituída a Assembleia Nacional Constituinte, que votou e promulgou, no mesmo ano, os Artigos da Constituição, que serviram de base para o desenvolvimento da Constituição Francesa, promulgada em 1791. O documento central da Assembleia é a Declaração dos Direitos do Homem e do Cidadão, de 1789. O artigo 1º da Declaração define que:
 
-      A Declaração de Independência Americana de 1776 e a Declaração dos Direitos do Homem 
-      e do Cidadão de 1789 representaram marcos importantes na codificação legal dos direitos 
-      humanos fundamentais.
+      "os homens nascem e são livres e iguais em direitos. As distinções sociais só podem fundar-se na utilidade comum" (DECLARAÇÃO..., 2021).
+
+      No mesmo período, os Estados Unidos da América, recém-fundados no ano de 1776, após a independência do jugo político da Inglaterra, também passavam pelo processo de criação de sua constituição. Assinada em 1787, a Constituição Americana foi complementada, no ano de 1791, pelo documento conhecido como Bill of Rights (Carta de Direitos, em tradução livre), que define a garantia dos direitos humanos como um ponto central da legislação americana.
+
+      A Constituição Francesa e a Americana eram inovadoras e representaram uma ruptura nos modelos de legislação característicos dos Estados absolutistas que dominaram a Europa e suas colônias durante grande parte da Idade Média e no início da Idade Moderna.
+
+      A inclusão dos direitos humanos como base conceitual e ponto central das constituições dos dois países influenciou a criação e a alteração de constituições e do arcabouço jurídico de diversos outros países, tanto aqueles que realizaram a transição para formas democráticas de governo quanto os que mantiveram a forma de governo monárquico.
+
+      Um exemplo de como a preocupação com os direitos humanos passou a ser presente nas legislações de diversos países pode ser observado nas mudanças implementadas na Constituição de Portugal, realizada em 1822, que incluiu, em um de seus artigos, o objetivo de garantir a liberdade, os direitos individuais, a segurança e o direito à propriedade privada a todos os cidadãos portugueses.
+
+      A crescente constitucionalização tornou os direitos humanos ainda mais importantes nas discussões políticas e jurídicas, com a promulgação, em diversos países, de leis positivas com o objetivo de garantir o acesso de todos os cidadãos aos seus direitos individuais.
+
+      Apesar de ter como base filosófica a ideia do contrato social e dos direitos naturais, de acordo com as pressões políticas, características culturais e influência de forças econômicas sobre o governo em cada país, as legislações dos direitos humanos foram adotadas e promulgadas com velocidades e intensidades diferentes.
+
+      Um exemplo é a abolição da escravidão. Enquanto a Dinamarca promulgou a lei da abolição da escravatura no ano de 1792, nos Estados Unidos, um dos berços dos direitos humanos, somente no ano de 1863 os negros foram libertados da escravidão por Abraham Lincoln, após a guerra civil conhecida como Guerra da Secessão, durante os anos de 1861 e 1865.
+
+      Já no Brasil, a escravidão só foi abolida em 1888, mais de um século depois da promulgação das constituições francesa e americana que colocaram os direitos humanos no centro da discussão jurídica das constituições nacionais.
+
+      Com o rápido crescimento econômico trazido pela industrialização e pela adoção do modelo capitalista de produção e o consequente crescimento das cidades, com a migração de trabalhadores em busca dos empregos nas indústrias, surgiram novas demandas sociais, notadamente entre os membros das classes proletárias (MARX; ENGELS, 2008).
+
+      Entre as diversas demandas surgidas com a nova realidade social, destacam-se:
+
+      • o direito a um salário justo com relação ao trabalho desenvolvido,
+      • o direito à saúde,
+      • à habitação digna e
+      • à educação (JERÓNIMO, 2019).
+
+      Esses direitos sociais, que não estavam incluídos na visão filosófica dos direitos naturais, seguem a lógica de individualidade dos direitos. Da mesma forma que os direitos humanos e os direitos naturais foram incluídos na maioria das constituições de diversos países, os direitos sociais também passaram a fazer parte do arcabouço jurídico de diversos países a partir da última década do século XIX e início do século XX.
     `,
     videoTitle: 'Desenvolvimento Jurídico dos Direitos Humanos',
     videoUrl: 'https://player-serverless.iesde.com.br/prod/player?path=ZGlyZWl0b3NfaHVtYW5vc19lX3JlbGFjb2VzX3NvY2lhaXMvZGlyZWl0b3NfaHVtYW5vc19lX3JlbGFjb2VzX3NvY2lhaXNfMDFfc2VjXzAyXzI2Njc0NS5tcDQ='
@@ -58,17 +79,53 @@ const sectionData = {
   3: {
     title: 'Origens políticas dos direitos humanos',
     content: `
-      As origens políticas dos direitos humanos estão intimamente ligadas às lutas pelo 
-      poder e pela liberdade ao longo da história, incluindo revoluções, movimentos sociais 
-      e transformações políticas.
+      Antes de apontarmos as origens políticas das discussões sobre os direitos humanos, é necessário definirmos o termo política. A palavra é bastante utilizada no cotidiano e está presente na mídia diariamente. Afinal, as decisões tomadas pelos políticos, sejam eles do Poder Executivo, sejam do Poder Legislativo, impactam diretamente a vida dos indivíduos de uma sociedade.
 
-      A Revolução Inglesa, a Revolução Americana e a Revolução Francesa foram eventos 
-      fundamentais que estabeleceram novos paradigmas políticos baseados na soberania 
-      popular e na limitação do poder governamental.
+      O termo política pode ser usado em diversos contextos diferentes e com significados diversos. Pode estar relacionado às políticas públicas, isto é, aos programas e às ações coordenadas pelo governo ou pelo Estado. Para Souza (2006), ao analisarmos as políticas públicas de determinado governo, é possível compreendermos as motivações, os valores e os objetivos do grupo político que está no poder.
 
-      Os movimentos abolicionistas, as lutas pelos direitos das mulheres, e outros movimentos 
-      sociais contribuíram para expandir a compreensão e aplicação dos direitos humanos 
-      em diferentes contextos políticos.
+      Na sua acepção mais conhecida e utilizada, política está relacionada à organização do Estado em poderes que se equilibram e ao processo eleitoral pelo qual os representantes do povo são escolhidos para exercer cargos nesses poderes. Segundo Caxito (2020, p. 39):
+
+      "Assim, o governo é composto por um grupo de indivíduos eleitos, que assumem posições nas quais têm alto poder de decisão sobre os rumos da sociedade. Porém, essas decisões são contrabalançadas pelo sistema de freios, pelos contrapesos dos três poderes, pela atuação política, pelas estratégias dos partidos políticos, pelos interesses de grupos econômicos e, também, pelas ideologias que cada um desses grupos representa."
+
+      É possível observarmos, na definição apresentada, que a palavra política aparece em vários contextos diferentes. Ela está relacionada ao próprio modelo de divisão de poderes, aos grupos de interesse que se organizam na cena pública, às ideologias defendidas e representadas por esses grupos e ao processo de negociação e mediação dos conflitos e interesses das diversas parcelas da sociedade.
+
+      Hannah Arendt, uma das principais filósofas a abordar o conceito de política, apresenta em sua obra O que é política? (2002) diversos conceitos sobre o termo. Para ela, a política surge por meio da pluralidade dos indivíduos que fazem parte de um grupo social. Como as pessoas não são iguais e têm interesses, crenças e valores diferentes, é necessário haver uma forma de mediar essas divergências, e é por meio da política que a convivência entre diferentes é possível.
+
+      Uma das definições dadas por Arendt (2002) de política é especialmente importante no contexto das discussões no que diz respeito aos direitos humanos:
+
+      "O homem, tal como a filosofia e a teologia o conhecem, existe — ou se realiza — na política apenas no tocante aos direitos iguais que os mais diferentes garantem a si próprios. Exatamente na garantia e concessão voluntária de uma reivindicação juridicamente equânime reconhece-se que a pluralidade dos homens, os quais devem a si mesmos sua pluralidade, atribui sua existência à criação do homem." (ARENDT, 2002, p. 2)
+
+      Já Rancière (2018) define a política tanto como um processo que agrega ao grupo social pela aceitação e pelo consentimento das diferenças quanto como a organização do Estado em diferentes poderes equilibrados, formados por lugares, cargos e funções que são ocupados e distribuídos entre os grupos de interesse, de acordo com processos definidos – processos eleitorais, por exemplo.
+
+      No contexto político, mesmo com as discussões referentes aos direitos humanos tendo iniciado nos séculos XVII e XVIII, como abordamos na primeira parte deste capítulo, houve a transição dos regimes absolutistas para o modelo democrático do Estado graças às ideias dos filósofos contratualistas. Foi somente após a Segunda Guerra Mundial (1939–1945) que o tema passou a fazer parte das articulações políticas globais, com a publicação da Declaração Universal de Direitos Humanos pela Organização das Nações Unidas (ONU), em 1948.
+
+      De acordo com Salles (2015), a ONU foi criada no ano de 1945, logo após o final da Segunda Guerra Mundial, como resultado de um esforço de diversos países para promover a paz, a reorganização econômica e a reconstrução das relações entre as nações. Além da preocupação imediata com a reconstrução da Europa, em grande parte destruída pela guerra, a ONU nasceu também com a preocupação de promover o desenvolvimento social nos países em desenvolvimento.
+
+      A Declaração Universal dos Direitos Humanos, segundo Rosa (2015), foi um dos principais documentos publicados pela ONU nos primeiros anos após sua formação. Conforme a autora, 50 países foram signatários da Declaração, que buscava garantir a proteção social e os direitos individuais que haviam sido sistematicamente desrespeitados durante a sequência de conflitos que marcaram a primeira metade do século.
+
+      O contexto político no qual a Declaração foi publicada é fundamental para entendermos cada um de seus artigos. Em seu preâmbulo, o documento destaca, entre outras considerações que fundamentam o documento, que:
+
+      "considerando que o desconhecimento e o desprezo dos Direitos Humanos conduziram a atos de barbárie que revoltam a consciência da Humanidade e que o advento de um mundo em que os seres humanos sejam livres de falar e de crer, libertos do terror e da miséria, foi proclamado como a mais alta inspiração humana;
+
+      considerando que é essencial a proteção dos Direitos Humanos através de um regime de direito, para que o homem não seja compelido, em supremo recurso, à revolta contra a tirania e a opressão."
+      (ONU, 1948, p. 1)
+
+      As duas considerações estão relacionadas ao momento político global do pós-guerra, no qual o documento foi escrito. A primeira mostra que os motivos políticos que causaram as duas guerras mundiais levaram a situações de total desrespeito aos direitos humanos. O que se pretende, com a declaração, é lançar as bases para um mundo no qual as divergências políticas não ocasionem perdas de direitos individuais.
+
+      A segunda consideração mostra o receio dos países signatários com o desenvolvimento de ditaduras nas quais os direitos humanos não sejam respeitados. No contexto político do momento, o mundo assistia ao início da divisão política entre o mundo ocidental, capitaneado pelos Estados Unidos, e os países comunistas, liderados pela União Soviética.
+
+      Mesmo tendo sido aprovada pela esmagadora maioria dos países que compunham a ONU naquele momento, profundas divergências marcaram a definição dos direitos que constam no documento. Essas divergências prenunciavam a divisão do mundo em duas diferentes visões econômicas e políticas que marcaram o período da Guerra Fria.
+
+      Divergências sobre aspectos culturais e religiosos também marcaram as discussões que deram origem à Declaração, em especial com relação às nações da África e Oriente Médio, como África do Sul e Arábia Saudita, para as quais a declaração apresentava uma visão ocidentalizada.
+
+      Já para as nações socialistas do Leste Europeu e da Ásia, a Declaração apresentava uma visão capitalista e individualista, em contraposição à visão da economia centralizada do comunismo. Assim, países como União Soviética, Iugoslávia, Bielorrússia, Polônia, Tchecoslováquia e Ucrânia se abstiveram durante a votação do documento.
+
+      Para Alves (1994), o documento só foi aprovado por ter um caráter de declaração e orientação, não sendo nenhum país signatário obrigado a implantar nenhuma de suas determinações. O autor aponta que foram necessários quase 20 anos para que a declaração passasse a ter peso de obrigatoriedade, com a aprovação no ano de 1966 do:
+
+      • Pacto Internacional de Direitos Econômicos, Sociais e Culturais e
+      • Pacto Internacional de Direitos Civis e Políticos.
+
+      Com base na Declaração da ONU, cada país passou a realizar alterações jurídicas e foram criadas legislações específicas para orientar as políticas públicas com o objetivo de garantir a proteção dos direitos humanos.
     `,
     videoTitle: 'Movimentos Políticos e Direitos Humanos',
     videoUrl: 'https://player-serverless.iesde.com.br/prod/player?path=ZGlyZWl0b3NfaHVtYW5vc19lX3JlbGFjb2VzX3NvY2lhaXMvZGlyZWl0b3NfaHVtYW5vc19lX3JlbGFjb2VzX3NvY2lhaXNfMDFfc2VjXzAzXzI2Njc0Ni5tcDQ='
@@ -76,16 +133,64 @@ const sectionData = {
   4: {
     title: 'Direitos humanos: contextualização histórica',
     content: `
-      A contextualização histórica dos direitos humanos revela como esses direitos evoluíram 
-      em resposta a diferentes desafios e necessidades históricas, desde as primeiras 
-      civilizações até os desenvolvimentos contemporâneos.
+      Segundo Tosi (2009), a discussão a respeito dos direitos humanos evoluiu à medida que o entendimento sobre o tema foi se tornando mais global, aprofundado e diversificado.
 
-      As atrocidades das duas guerras mundiais, especialmente o Holocausto, criaram um 
-      impulso internacional para estabelecer proteções universais dos direitos humanos, 
-      culminando na Declaração Universal dos Direitos Humanos de 1948.
+      Se em sua primeira versão, em 1948, a Declaração Universal dos Direitos Humanos da ONU foi assinada por 48 países, nas décadas iniciais do século XXI, o número de Estados participantes da organização e signatários da declaração se aproximou de 200 nações, mostrando que o tema é uma preocupação global.
 
-      A Guerra Fria, os processos de descolonização e os movimentos pelos direitos civis 
-      continuaram a moldar a evolução e aplicação dos direitos humanos no século XX e XXI.
+      No decorrer da segunda metade do século XX e nas primeiras décadas do século XXI, a ONU e diversos outros organismos internacionais desenvolveram estudos, conferências, documentos e legislações sobre os direitos humanos, o que trouxe um conhecimento cada vez mais profundo e extenso de diversos temas relacionados aos direitos humanos.
+
+      À medida que as discussões se aprofundaram, também se diversificaram e especializaram. Se nos primeiros documentos os direitos humanos eram pensados para um indivíduo genérico, gradativamente se passou a enxergar a diversidade cultural, religiosa, etária, étnica e de gênero. Desse modo, as legislações passaram a ser desenvolvidas para garantir os direitos específicos dos diversos grupos sociais.
+
+      Analisando essa evolução dentro do contexto histórico das discussões sobre os direitos humanos, Tosi (2009) classifica os direitos humanos em quatro gerações:
+
+      **Primeira geração**
+      Relacionada à conquista dos direitos civis ou naturais, que Tosi chama de direitos negativos, pois têm como objetivo limitar os excessos do Estado.
+
+      Exemplos:
+      • Direito à vida,
+      • Liberdade,
+      • Propriedade privada,
+      • Liberdade de expressão.
+
+      Esses direitos foram o foco das primeiras legislações, como a Declaração dos Direitos do Homem e do Cidadão (França) e a Bill of Rights (EUA), no final do século XVIII.
+
+      Apesar de estarem presentes em declarações e legislações, ainda não são plenamente garantidos. A ONU (2019) apontou:
+      • 150 milhões de crianças em trabalho infantil,
+      • 25 milhões em situação análoga à escravidão,
+      • 5 milhões vítimas de exploração sexual.
+
+      Segundo a Anistia Internacional (2021), 652 execuções por pena de morte ocorreram em 2019 (sem contar a China, que não divulga números oficiais, mas estima-se mais de mil execuções).
+
+      **Segunda geração**
+      Ligada aos direitos sociais, especialmente os econômicos, como:
+      • Direito ao trabalho digno,
+      • Saúde,
+      • Educação gratuita,
+      • Cultura,
+      • Proteção à infância.
+
+      Surgem das lutas da classe trabalhadora, principalmente no século XIX.
+
+      Apesar de já constarem em muitas legislações, muitos ainda não são plenamente garantidos. Em muitos países, inclusive no Brasil, esses direitos são vistos como metas a serem alcançadas, e não como obrigações imediatas do Estado.
+
+      **Terceira geração**
+      Referem-se aos direitos de caráter coletivo ou difuso, como:
+      • Direito à paz,
+      • Meio ambiente equilibrado,
+      • Desenvolvimento sustentável,
+      • Preservação da cultura dos povos.
+
+      Esses direitos envolvem solidariedade entre as nações e exigem cooperação internacional. Exemplo: Acordo de Paris, voltado à redução de poluentes e combate às mudanças climáticas.
+
+      São complexos de garantir porque dependem da vontade política e econômica de vários países, com diferentes ideologias e prioridades.
+
+      **Quarta geração**
+      Direitos voltados às próximas gerações, garantindo:
+      • Sustentabilidade ambiental,
+      • Equidade tecnológica,
+      • Proteção dos dados e privacidade digital.
+
+      Segundo Bonavides (2003), a institucionalização desses direitos será o marco do Estado social pleno.
     `,
     videoTitle: 'Evolução Histórica dos Direitos Humanos',
     videoUrl: 'https://player-serverless.iesde.com.br/prod/player?path=ZGlyZWl0b3NfaHVtYW5vc19lX3JlbGFjb2VzX3NvY2lhaXMvZGlyZWl0b3NfaHVtYW5vc19lX3JlbGFjb2VzX3NvY2lhaXNfMDFfc2VjXzA0XzI2Njc0Ny5tcDQ='
@@ -93,19 +198,56 @@ const sectionData = {
   5: {
     title: 'Direitos humanos no Brasil',
     content: `
-      A história dos direitos humanos no Brasil reflete as particularidades do desenvolvimento 
-      político, social e jurídico do país, desde o período colonial até a redemocratização.
+      Existe uma relação intrínseca entre as legislações sobre os direitos humanos e os estados democráticos, pois respeitar os direitos dos indivíduos é um dos principais valores da República e da democracia. Moraes (2003) estabelece uma relação entre os direitos humanos, a justiça e o arcabouço jurídico do país. Para o autor, sem respeito aos direitos individuais, não é possível garantir a justiça social.
 
-      O período colonial e imperial foi marcado por graves violações dos direitos humanos, 
-      incluindo a escravidão e a marginalização das populações indígenas. A abolição da 
-      escravatura em 1888 representou um marco importante, embora a implementação efetiva 
-      da igualdade tenha sido um processo longo e ainda em andamento.
+      Conforme as Diretrizes Nacionais de Ensino em Direitos Humanos (BRASIL, 2013, p. 38), os valores que direcionam as legislações e os programas do governo brasileiro quanto aos direitos humanos são:
 
-      A Constituição de 1988 estabeleceu um marco fundamental para os direitos humanos no 
-      Brasil, consagrando princípios como a dignidade da pessoa humana e estabelecendo 
-      um amplo catálogo de direitos fundamentais. A criação de instituições como a 
-      Defensoria Pública e o fortalecimento do Ministério Público contribuíram para 
-      a proteção desses direitos.
+      "por valores democráticos entendem-se:
+      (a) O amor à igualdade e consequente horror aos privilégios;
+      (b) A aceitação da vontade da maioria legitimamente formada, decorrente de eleições ou de outro processo democrático, porém com constante respeito aos direitos das minorias; e
+      (c) Em consequência dos tópicos acima, configura-se como conclusivo o respeito integral aos Direitos Humanos."
+
+      No entanto, mesmo que as legislações existam e sejam adequadas, garantir que os direitos humanos sejam respeitados no cotidiano da sociedade é uma tarefa complexa e ainda difícil de ser implementada. Nogueira (2001) afirma que a democracia, na prática da política brasileira, ainda está mais ligada ao rito eleitoral do que à garantia real dos direitos humanos de todas as parcelas da população.
+
+      Após mais de duas décadas sob regime militar, foi promulgada em 1988 uma nova constituição brasileira, conhecida como Constituição Cidadã. Foi o primeiro documento a determinar os direitos e deveres dos cidadãos, institucionalizando os direitos humanos no país. No artigo 5º da Constituição:
+
+      "Todos são iguais perante a lei, sem distinção de qualquer natureza, garantindo-se aos brasileiros e aos estrangeiros residentes no País a inviolabilidade do direito à vida, à liberdade, à igualdade, à segurança e à propriedade." (BRASIL, 1988)
+
+      Apesar de representar um grande avanço, mesmo depois de mais de três décadas, a garantia plena dos direitos dos cidadãos brasileiros ainda não foi alcançada.
+
+      O Brasil possui uma grande extensão territorial e uma diversidade cultural e étnica significativa, com origens marcadas por ondas migratórias, pela exploração das riquezas naturais e pela escravização de povos. Como resultado, é um país com um grande débito em relação aos direitos humanos de boa parte de sua população (SANTOS; CHAUÍ, 2016).
+
+      Mesmo nas grandes capitais, o Estado não consegue garantir o direito à vida, o mais básico de todos. A situação se agrava quando se trata dos direitos de segunda e terceira geração, que exigem investimentos de longo prazo em políticas públicas. Frequentemente, tais políticas sofrem descontinuidade a cada troca de governo.
+
+      Outro desafio central no Brasil é a reparação histórica aos grupos minoritários, como as minorias étnicas e de gênero. Para Paula, Silva e Bittar (2017, p. 3842), minorias podem ser definidas como:
+
+      "um grupo humano ou social que esteja em uma situação de inferioridade ou subordinação em relação a outro, considerado majoritário ou dominante. Essa posição de inferioridade pode ter como fundamento diversos fatores, como socioeconômico, legislativo, psíquico, etário, físico, linguístico, de gênero, étnico ou religioso."
+
+      A inclusão social dessas minorias é uma das maiores dívidas da sociedade brasileira (URI; URI, 2019), e não depende apenas de leis ou ações afirmativas, mas de mudanças estruturais nas políticas econômicas e sociais, visando a redução da desigualdade de renda e concentração de riqueza.
+
+      O Brasil é signatário de grande parte dos instrumentos internacionais de direitos humanos, mas ainda apresenta fortes desigualdades sociais e dificuldade em garantir o acesso efetivo aos direitos pela população mais vulnerável (MARTINS; SIQUEIRA, 2017).
+
+      Dornelles (1998) destaca a falta de conhecimento dos próprios cidadãos quanto a seus direitos como um grande obstáculo. A educação em direitos humanos é uma das ferramentas mais eficazes para aumentar a consciência da população. Por isso, em 2013, a Secretaria de Direitos Humanos da Presidência da República publicou o Caderno de Educação em Direitos Humanos, que define diretrizes para o ensino do tema no Brasil (BRASIL, 2013).
+
+      O documento orienta a educação em direitos humanos em cinco eixos:
+      • Educação básica
+      • Educação superior
+      • Educação dos profissionais de Justiça e Segurança
+      • Educação e mídia
+      • Educação não formal
+
+      Com o objetivo de consolidar os direitos previstos na Constituição, o Estado brasileiro lançou, em 1996, o Programa Nacional de Direitos Humanos (PNDH). Esse programa visava garantir direitos de primeira e segunda geração, como vida, liberdade, igualdade, cidadania e educação, alinhando-se com documentos internacionais.
+
+      O programa foi:
+      • Revisado em 2002 (PNDH II) – Incluindo moradia, trabalho, alimentação, cultura e saúde.
+      • Ampliado novamente em 2009 (PNDH III) – Avançando na concretização das leis de proteção aos direitos humanos.
+
+      Para Dallari (2004), a Constituição brasileira é rigorosa e explícita em relação aos direitos humanos de primeira, segunda e terceira gerações, mas também é aberta a novas demandas sociais. Leis recentes exemplificam essa evolução:
+
+      • Lei nº 12.965/2014 – Marco Civil da Internet, que trata da proteção de dados e liberdade online.
+      • Lei nº 13.709/2018 – LGPD, que regulamenta o uso de dados pessoais.
+
+      Essas leis refletem o esforço de adaptar os direitos humanos ao contexto tecnológico e digital contemporâneo, algo inexistente quando a Constituição foi promulgada.
     `,
     videoTitle: 'Direitos Humanos na História do Brasil',
     videoUrl: 'https://player-serverless.iesde.com.br/prod/player?path=ZGlyZWl0b3NfaHVtYW5vc19lX3JlbGFjb2VzX3NvY2lhaXMvZGlyZWl0b3NfaHVtYW5vc19lX3JlbGFjb2VzX3NvY2lhaXNfMDFfc2VjXzA1XzI2Njc0OC5tcDQ='
