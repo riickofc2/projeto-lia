@@ -180,110 +180,112 @@ const FABMenu = ({ context = "geral", chapterTitle = "Conteúdo" }: FABMenuProps
                     </Button>
                   </div>
                 </DialogTrigger>
-                <DialogContent className={`${item.id === 'mapa' && context === 'secao-1-5' ? 'sm:max-w-2xl' : 'sm:max-w-md'} bg-slate-900 border-slate-700 max-h-[80vh] overflow-y-auto`}>
-                  <DialogHeader>
-                    <DialogTitle className="text-white flex items-center gap-2">
-                      <item.icon className="h-5 w-5" />
-                      {item.label}
-                    </DialogTitle>
-                  </DialogHeader>
-                  <div className="p-4">
-                    {item.id === 'mentor' && (
-                      <div className="space-y-4">
-                        <p className="text-gray-300 text-sm break-words">
-                          Converse com o mentor digital sobre: <strong>{chapterTitle}</strong>
-                        </p>
+                <DialogContent className={`${item.id === 'mapa' && context === 'secao-1-5' ? 'w-full h-full max-w-none max-h-none m-0 p-0 border-0' : 'sm:max-w-md'} bg-slate-900 border-slate-700 max-h-[80vh] overflow-y-auto`}>
+                  {item.id === 'mapa' && context === 'secao-1-5' ? (
+                    <div className="w-full h-full">
+                      <MapaMentalInterativo />
+                    </div>
+                  ) : (
+                    <>
+                      <DialogHeader>
+                        <DialogTitle className="text-white flex items-center gap-2">
+                          <item.icon className="h-5 w-5" />
+                          {item.label}
+                        </DialogTitle>
+                      </DialogHeader>
+                      <div className="p-4">
+                        {item.id === 'mentor' && (
+                          <div className="space-y-4">
+                            <p className="text-gray-300 text-sm break-words">
+                              Converse com o mentor digital sobre: <strong>{chapterTitle}</strong>
+                            </p>
 
-                        <div className="bg-slate-800 p-3 rounded-lg max-h-64 overflow-y-auto space-y-2">
-                          {chatMessages.length === 0 ? (
-                            <div>
-                              <p className="text-sm text-gray-400 mb-2">Mentor Digital:</p>
-                              <p className="text-white text-sm break-words leading-relaxed">
-                                Olá! Sou seu mentor digital especializado em Direitos Humanos. Posso ajudar com dúvidas sobre {chapterTitle.toLowerCase()}. 
-                                O que gostaria de saber?
+                            <div className="bg-slate-800 p-3 rounded-lg max-h-64 overflow-y-auto space-y-2">
+                              {chatMessages.length === 0 ? (
+                                <div>
+                                  <p className="text-sm text-gray-400 mb-2">Mentor Digital:</p>
+                                  <p className="text-white text-sm break-words leading-relaxed">
+                                    Olá! Sou seu mentor digital especializado em Direitos Humanos. Posso ajudar com dúvidas sobre {chapterTitle.toLowerCase()}. 
+                                    O que gostaria de saber?
+                                  </p>
+                                </div>
+                              ) : (
+                                chatMessages.map((message, index) => (
+                                  <div key={index} className={`p-2 rounded ${message.role === 'user' ? 'bg-blue-600 ml-4' : 'bg-slate-700 mr-4'}`}>
+                                    <p className={`text-sm break-words leading-relaxed ${message.role === 'user' ? 'text-white' : 'text-gray-200'}`}>
+                                      <strong>{message.role === 'user' ? 'Você' : 'Mentor'}:</strong> {message.content}
+                                    </p>
+                                  </div>
+                                ))
+                              )}
+                              {isLoading && (
+                                <div className="bg-slate-700 mr-4 p-2 rounded">
+                                  <p className="text-sm text-gray-200">Mentor está digitando...</p>
+                                </div>
+                              )}
+                            </div>
+                            
+                            <div className="flex gap-2">
+                              <input 
+                                type="text" 
+                                placeholder="Digite sua pergunta..." 
+                                value={userInput}
+                                onChange={(e) => setUserInput(e.target.value)}
+                                onKeyPress={(e) => e.key === 'Enter' && sendMessage()}
+                                className="flex-1 bg-slate-800 text-white p-2 rounded border-slate-600 text-sm"
+                              />
+                              <Button 
+                                onClick={sendMessage} 
+                                className="bg-blue-600 hover:bg-blue-700 px-3"
+                                disabled={isLoading}
+                              >
+                                <Send className="h-4 w-4" />
+                              </Button>
+                            </div>
+                          </div>
+                        )}
+                        {item.id === 'podcast' && (
+                          <div className="space-y-4">
+                            <p className="text-gray-300 break-words">Áudio do capítulo: {chapterTitle}</p>
+                            <div className="bg-slate-800 p-4 rounded-lg">
+                              <div className="flex items-center gap-4">
+                                <Button className="bg-green-600 hover:bg-green-700">
+                                  <Headphones className="h-4 w-4 mr-2" />
+                                  Play
+                                </Button>
+                                <div className="flex-1 bg-slate-700 h-2 rounded-full">
+                                  <div className="bg-green-500 h-2 rounded-full w-1/3"></div>
+                                </div>
+                                <span className="text-sm text-gray-400">05:32</span>
+                              </div>
+                            </div>
+                          </div>
+                        )}
+                        {item.id === 'resumo' && (
+                          <div className="space-y-4">
+                            <p className="text-gray-300 break-words">Resumo: {chapterTitle}</p>
+                            <div className="bg-slate-800 p-4 rounded-lg max-h-64 overflow-y-auto">
+                              <p className="text-white text-sm leading-relaxed break-words whitespace-pre-line">
+                                {getResumoContent()}
                               </p>
                             </div>
-                          ) : (
-                            chatMessages.map((message, index) => (
-                              <div key={index} className={`p-2 rounded ${message.role === 'user' ? 'bg-blue-600 ml-4' : 'bg-slate-700 mr-4'}`}>
-                                <p className={`text-sm break-words leading-relaxed ${message.role === 'user' ? 'text-white' : 'text-gray-200'}`}>
-                                  <strong>{message.role === 'user' ? 'Você' : 'Mentor'}:</strong> {message.content}
-                                </p>
-                              </div>
-                            ))
-                          )}
-                          {isLoading && (
-                            <div className="bg-slate-700 mr-4 p-2 rounded">
-                              <p className="text-sm text-gray-200">Mentor está digitando...</p>
-                            </div>
-                          )}
-                        </div>
-                        
-                        <div className="flex gap-2">
-                          <input 
-                            type="text" 
-                            placeholder="Digite sua pergunta..." 
-                            value={userInput}
-                            onChange={(e) => setUserInput(e.target.value)}
-                            onKeyPress={(e) => e.key === 'Enter' && sendMessage()}
-                            className="flex-1 bg-slate-800 text-white p-2 rounded border-slate-600 text-sm"
-                          />
-                          <Button 
-                            onClick={sendMessage} 
-                            className="bg-blue-600 hover:bg-blue-700 px-3"
-                            disabled={isLoading}
-                          >
-                            <Send className="h-4 w-4" />
-                          </Button>
-                        </div>
-                      </div>
-                    )}
-                    {item.id === 'podcast' && (
-                      <div className="space-y-4">
-                        <p className="text-gray-300 break-words">Áudio do capítulo: {chapterTitle}</p>
-                        <div className="bg-slate-800 p-4 rounded-lg">
-                          <div className="flex items-center gap-4">
-                            <Button className="bg-green-600 hover:bg-green-700">
-                              <Headphones className="h-4 w-4 mr-2" />
-                              Play
-                            </Button>
-                            <div className="flex-1 bg-slate-700 h-2 rounded-full">
-                              <div className="bg-green-500 h-2 rounded-full w-1/3"></div>
-                            </div>
-                            <span className="text-sm text-gray-400">05:32</span>
                           </div>
-                        </div>
-                      </div>
-                    )}
-                    {item.id === 'resumo' && (
-                      <div className="space-y-4">
-                        <p className="text-gray-300 break-words">Resumo: {chapterTitle}</p>
-                        <div className="bg-slate-800 p-4 rounded-lg max-h-64 overflow-y-auto">
-                          <p className="text-white text-sm leading-relaxed break-words whitespace-pre-line">
-                            {getResumoContent()}
-                          </p>
-                        </div>
-                      </div>
-                    )}
-                    {item.id === 'mapa' && (
-                      <div className="space-y-4">
-                        <p className="text-gray-300 break-words">Mapa Mental: {chapterTitle}</p>
-                        {context === 'secao-1-5' ? (
-                          <div className="bg-white rounded-lg overflow-hidden max-h-96 overflow-y-auto">
-                            <MapaMentalInterativo />
-                          </div>
-                        ) : (
-                          <div className="bg-slate-800 p-4 rounded-lg">
-                            <img 
-                              src={getMapaImage()} 
-                              alt={`Mapa Mental - ${chapterTitle}`}
-                              className="w-full h-auto rounded-lg"
-                            />
+                        )}
+                        {item.id === 'mapa' && (
+                          <div className="space-y-4">
+                            <p className="text-gray-300 break-words">Mapa Mental: {chapterTitle}</p>
+                            <div className="bg-slate-800 p-4 rounded-lg">
+                              <img 
+                                src={getMapaImage()} 
+                                alt={`Mapa Mental - ${chapterTitle}`}
+                                className="w-full h-auto rounded-lg"
+                              />
+                            </div>
                           </div>
                         )}
                       </div>
-                    )}
-                  </div>
+                    </>
+                  )}
                 </DialogContent>
               </Dialog>
             ))}

@@ -231,17 +231,19 @@ const MapaMentalInterativo = () => {
   };
 
   return (
-    <div className="max-w-lg mx-auto p-5 pb-8 bg-gray-50 min-h-full">
-      <style dangerouslySetInnerHTML={{
-        __html: `
-          @media (max-width: 450px) {
-            .max-w-lg { padding: 1rem 0.25rem 2rem; }
-            .text-base { font-size: 0.99rem; }
-            button { font-size: 0.98rem; }
-          }
-        `
-      }} />
-      {renderStack()}
+    <div className="w-full h-screen bg-gray-50 overflow-y-auto">
+      <div className="max-w-lg mx-auto p-5 pb-8 min-h-full">
+        <style dangerouslySetInnerHTML={{
+          __html: `
+            @media (max-width: 450px) {
+              .max-w-lg { padding: 1rem 0.25rem 2rem; }
+              .text-base { font-size: 0.99rem; }
+              button { font-size: 0.98rem; }
+            }
+          `
+        }} />
+        {renderStack()}
+      </div>
     </div>
   );
 };
