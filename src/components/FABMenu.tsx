@@ -149,13 +149,13 @@ const FABMenu = ({ context = "geral", chapterTitle = "Conteúdo" }: FABMenuProps
       <div className="fixed bottom-6 right-6 z-50">
         <Button
           onClick={() => setIsOpen(!isOpen)}
-          className={`w-20 h-20 rounded-full shadow-lg transition-all duration-300 ${
+          className={`group w-20 h-20 rounded-full shadow-lg transition-all duration-300 ${
             isOpen 
               ? 'bg-black hover:bg-gray-300 rotate-45' 
               : 'bg-black hover:bg-gray-300'
           }`}
         >
-          {isOpen ? <X className="h-8 w-8 text-white" /> : <Plus className="h-8 w-8 text-white" />}
+          {isOpen ? <X className="h-8 w-8 text-white group-hover:text-black" /> : <Plus className="h-8 w-8 text-white group-hover:text-black" />}
         </Button>
 
         {/* Menu Items */}
