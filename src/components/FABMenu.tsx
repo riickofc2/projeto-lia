@@ -151,8 +151,8 @@ const FABMenu = ({ context = "geral", chapterTitle = "Conteúdo" }: FABMenuProps
           onClick={() => setIsOpen(!isOpen)}
           className={`w-20 h-20 rounded-full shadow-lg transition-all duration-300 ${
             isOpen 
-              ? 'bg-black hover:bg-gray-800 rotate-45' 
-              : 'bg-black hover:bg-gray-800'
+              ? 'bg-black hover:bg-gray-300 rotate-45' 
+              : 'bg-black hover:bg-gray-300'
           }`}
         >
           {isOpen ? <X className="h-8 w-8 text-white" /> : <Plus className="h-8 w-8 text-white" />}
@@ -164,7 +164,7 @@ const FABMenu = ({ context = "geral", chapterTitle = "Conteúdo" }: FABMenuProps
             {menuItems.map((item, index) => (
               <Dialog key={item.id} open={activeDialog === item.id} onOpenChange={(open) => setActiveDialog(open ? item.id : null)}>
                 <DialogTrigger asChild>
-                  <div className="flex items-center gap-3 group">
+                  <div className="flex items-center justify-end gap-3 group">
                     <span className="text-white text-sm font-medium bg-slate-800 px-3 py-2 rounded-lg shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap">
                       {item.label}
                     </span>
