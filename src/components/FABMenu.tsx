@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
 import { Plus, MessageCircle, Headphones, FileText, Network, X, Send } from 'lucide-react';
+import MapaMentalInterativo from './MapaMentalInterativo';
 
 interface FABMenuProps {
   context?: string;
@@ -179,7 +180,7 @@ const FABMenu = ({ context = "geral", chapterTitle = "Conteúdo" }: FABMenuProps
                     </Button>
                   </div>
                 </DialogTrigger>
-                <DialogContent className="sm:max-w-md bg-slate-900 border-slate-700 max-h-[80vh] overflow-y-auto">
+                <DialogContent className={`${item.id === 'mapa' && context === 'secao-1-5' ? 'sm:max-w-2xl' : 'sm:max-w-md'} bg-slate-900 border-slate-700 max-h-[80vh] overflow-y-auto`}>
                   <DialogHeader>
                     <DialogTitle className="text-white flex items-center gap-2">
                       <item.icon className="h-5 w-5" />
@@ -267,13 +268,19 @@ const FABMenu = ({ context = "geral", chapterTitle = "Conteúdo" }: FABMenuProps
                     {item.id === 'mapa' && (
                       <div className="space-y-4">
                         <p className="text-gray-300 break-words">Mapa Mental: {chapterTitle}</p>
-                        <div className="bg-slate-800 p-4 rounded-lg">
-                          <img 
-                            src={getMapaImage()} 
-                            alt={`Mapa Mental - ${chapterTitle}`}
-                            className="w-full h-auto rounded-lg"
-                          />
-                        </div>
+                        {context === 'secao-1-5' ? (
+                          <div className="bg-white rounded-lg overflow-hidden max-h-96 overflow-y-auto">
+                            <MapaMentalInterativo />
+                          </div>
+                        ) : (
+                          <div className="bg-slate-800 p-4 rounded-lg">
+                            <img 
+                              src={getMapaImage()} 
+                              alt={`Mapa Mental - ${chapterTitle}`}
+                              className="w-full h-auto rounded-lg"
+                            />
+                          </div>
+                        )}
                       </div>
                     )}
                   </div>
