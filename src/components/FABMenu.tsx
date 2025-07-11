@@ -164,15 +164,20 @@ const FABMenu = ({ context = "geral", chapterTitle = "Conteúdo" }: FABMenuProps
             {menuItems.map((item, index) => (
               <Dialog key={item.id} open={activeDialog === item.id} onOpenChange={(open) => setActiveDialog(open ? item.id : null)}>
                 <DialogTrigger asChild>
-                  <Button
-                    className={`w-12 h-12 rounded-full shadow-lg ${item.color} transition-all duration-300 transform hover:scale-110`}
-                    style={{ 
-                      animationDelay: `${index * 50}ms`,
-                      animation: 'slide-in-right 0.3s ease-out forwards'
-                    }}
-                  >
-                    <item.icon className="h-5 w-5" />
-                  </Button>
+                  <div className="flex items-center gap-3 group">
+                    <span className="text-white text-sm font-medium bg-slate-800 px-3 py-2 rounded-lg shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap">
+                      {item.label}
+                    </span>
+                    <Button
+                      className={`w-12 h-12 rounded-full shadow-lg ${item.color} transition-all duration-300 transform hover:scale-110`}
+                      style={{ 
+                        animationDelay: `${index * 50}ms`,
+                        animation: 'slide-in-right 0.3s ease-out forwards'
+                      }}
+                    >
+                      <item.icon className="h-5 w-5" />
+                    </Button>
+                  </div>
                 </DialogTrigger>
                 <DialogContent className="sm:max-w-md bg-slate-900 border-slate-700 max-h-[80vh] overflow-y-auto">
                   <DialogHeader>
