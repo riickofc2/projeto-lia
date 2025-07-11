@@ -128,13 +128,21 @@ const MapaMentalInterativo = () => {
     ]
   };
 
-  // Distribui as opções em linhas conforme a regra definida
+  // Distribui as opções em linhas responsivas
   const getOptionRows = (options: MapaOption[]) => {
     const n = options.length;
+    
+    // Para mobile (telas pequenas), sempre uma coluna para botões longos
+    if (window.innerWidth <= 640) {
+      return options.map(opt => [opt]);
+    }
+    
+    // Para desktop, mantém o sistema original
     if (n <= 3) return [options];
     if (n === 4) return [options.slice(0,2), options.slice(2)];
     if (n === 5) return [options.slice(0,3), options.slice(3)];
     if (n === 6) return [options.slice(0,3), options.slice(3,6)];
+    
     // fallback para mais de 6 (raro), divide em linhas de 3
     const rows = [];
     for(let i=0; i<n; i+=3) rows.push(options.slice(i,i+3));
@@ -163,7 +171,7 @@ const MapaMentalInterativo = () => {
           />
         )}
         
-        <div className="bg-white rounded-xl shadow-lg min-h-20 w-full max-w-full p-4 relative z-10 overflow-hidden">
+        <div className="bg-white rounded-xl shadow-lg min-h-20 w-full p-3 sm:p-4 relative z-10 overflow-hidden">
           {level > 0 && (
             <button
               onClick={() => goBack(level)}
@@ -173,29 +181,29 @@ const MapaMentalInterativo = () => {
             </button>
           )}
 
-          <div className="text-xl font-bold mb-3 text-left text-blue-600 break-words">
+          <div className="text-lg sm:text-xl font-bold mb-3 text-left text-blue-600 break-words leading-tight">
             {node.title}
           </div>
 
           {node.content && (
             <div 
-              className="mt-3 text-base text-left leading-6 text-gray-800 break-words overflow-wrap-break-word pr-px"
+              className="mt-3 text-sm sm:text-base text-left leading-relaxed text-gray-800 break-words overflow-wrap-break-word"
               dangerouslySetInnerHTML={{ __html: node.content }}
             />
           )}
 
           {node.options && (
-            <div className="flex flex-col gap-2 mt-3 items-center">
+            <div className="flex flex-col gap-1.5 sm:gap-2 mt-3 items-center">
               {getOptionRows(node.options).map((row, rowIdx) => (
-                <div key={rowIdx} className="flex flex-row gap-2 w-full justify-center mb-1">
+                <div key={rowIdx} className="flex flex-row gap-1.5 sm:gap-2 w-full justify-center">
                   {row.map((opt, idx) => {
-                    const globalIdx = rowIdx * 3 + idx;
+                    const globalIdx = window.innerWidth <= 640 ? rowIdx : rowIdx * 3 + idx;
                     const isSelected = branchStack[level] === globalIdx;
                     return (
                       <button
                         key={idx}
                         onClick={() => selectOption(level, globalIdx)}
-                        className={`bg-blue-600 text-white text-base border-none rounded-xl py-2 px-4 my-1 cursor-pointer shadow-sm min-w-24 max-w-1/3 flex-1 font-bold transition-none whitespace-normal break-words ${
+                        className={`bg-blue-600 text-white text-sm sm:text-base border-none rounded-lg sm:rounded-xl py-2.5 sm:py-2 px-3 sm:px-4 cursor-pointer shadow-sm font-medium sm:font-bold transition-none whitespace-normal break-words leading-tight w-full sm:flex-1 sm:min-w-24 sm:max-w-1/3 ${
                           isSelected ? 'bg-blue-700 outline outline-2 outline-blue-800' : 'hover:bg-blue-700 focus:bg-blue-700 focus:outline focus:outline-2 focus:outline-blue-800'
                         }`}
                       >
@@ -231,17 +239,8 @@ const MapaMentalInterativo = () => {
   };
 
   return (
-    <div className="w-full h-screen bg-gray-50 overflow-y-auto">
-      <div className="max-w-lg mx-auto p-5 pb-8 min-h-full">
-        <style dangerouslySetInnerHTML={{
-          __html: `
-            @media (max-width: 450px) {
-              .max-w-lg { padding: 1rem 0.25rem 2rem; }
-              .text-base { font-size: 0.99rem; }
-              button { font-size: 0.98rem; }
-            }
-          `
-        }} />
+    <div className="w-full h-screen bg-gray-50 overflow-y-auto overflow-x-hidden">
+      <div className="w-full max-w-md sm:max-w-lg mx-auto p-3 sm:p-5 pb-8 min-h-full">
         {renderStack()}
       </div>
     </div>
